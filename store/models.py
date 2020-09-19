@@ -38,11 +38,11 @@ class pesons(models.Model):
     reg_data = models.DateField()
     id_role = models.CharField(max_length=30)
     id_country = models.ForeignKey(country, on_delete=models.CASCADE)
-    second_name = models.CharField(max_length=30)
-    first_name = models.CharField(max_length=30)
-    middle_name = models.CharField(max_length=30)
-    phone = models.CharField(max_length=11)
-    email = models.CharField(max_length=150)
+    second_name = models.CharField(max_length=30, null=True)
+    first_name = models.CharField(max_length=30, null=True)
+    middle_name = models.CharField(max_length=30, null=True)
+    phone = models.CharField(max_length=11, null=True)
+    email = models.CharField(max_length=150, null=True)
 
 
 class product(models.Model):
@@ -50,10 +50,10 @@ class product(models.Model):
     name = models.CharField(max_length=30)
     price = models.DecimalField(max_digits=8,decimal_places=2)
     cat_id = models.ForeignKey(category, on_delete=models.CASCADE)
-    weight = models.IntegerField()
-    id_country = models.ForeignKey(country,on_delete=models.CASCADE)
-    id_postavshik =models.ForeignKey(postavshik,on_delete=models.CASCADE)
-    id_events = models.ForeignKey(events, on_delete=models.CASCADE)
+    weight = models.IntegerField() # А если мы на развес огурчики продаем?
+    id_country = models.ForeignKey(country, on_delete=models.CASCADE)
+    id_postavshik = models.ForeignKey(postavshik,on_delete=models.CASCADE)
+    id_events = models.ForeignKey(events, on_delete=models.CASCADE) # Откуда? что это?
 
 
 class storage(models.Model):
@@ -87,7 +87,7 @@ class bonus_card(models.Model):
 
 class sale(models.Model):
     id = models.AutoField(primary_key=True, db_index=True)
-    user = models.ForeignKey(pesons, related_name='user', on_delete=models.CASCADE)
+    user = models.ForeignKey(pesons, related_name='user', on_delete=models.CASCADE, null=True)
     date = models.DateTimeField()
     payments_method = models.ForeignKey(payments_method, on_delete=models.CASCADE)
     id_staff = models.ForeignKey(pesons, related_name='id_staff', on_delete=models.CASCADE)
