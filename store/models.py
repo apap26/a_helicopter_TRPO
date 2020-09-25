@@ -70,8 +70,6 @@ class product(models.Model):
     about = models.TextField(default="Краткое описание отсутствует")
     html_about = models.CharField(max_length=50, default="")
     brand = models.ForeignKey(brand, on_delete=models.CASCADE)
-    is_popular = models.BooleanField()
-    date_add = models.DateField(auto_now_add=True)
 
 
 
