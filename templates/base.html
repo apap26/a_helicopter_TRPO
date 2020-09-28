@@ -1,31 +1,254 @@
 {% load static %}
-
-{% comment %}
-
-# base.html
-# Базовый шаблон веб-приложения
-
-{% endcomment %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="shortcut icon" type="image/png" href="{% static "img/favicon.ico" %}">
-	{% block layout__head %}
-
-
-	{% endblock layout__head %}
-
+	{% block head %}
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script type="text/javascript" src="{% static "scripts/views.js"%}"></script>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="{% static "style.css" %}">
+	<title>{% block title %}
+	Store
+	{% endblock title %} </title>
+	{% endblock head %}
+	
 </head>
 <body>
+	<div id="view_categories" class="container_modal">
+		<div class="header_modal">
+			<div class="nav_menu">				
+				<p class="header_main">Каталог</P>
+				<a class="close_categories_btn" title="Закрыть" onclick="displayModalCategories()">
+					<img width="20px" src="/icons/cancel.svg" alt="⨉">
+				</a>
+			</div>
+		</div>
+		<div class="content_modal_categories">
 
-	{% block page__container_modal %}{% endblock page__container_modal %}
-
-	{% block page__header %}{% endblock page__header%}
+		</div>
+	</div>
+	<header class="header">
+	{% block header %}
+	<div class="nav_info">
+			<button class="nav_info_btn">О нас</button>
+			<button class="nav_info_btn">Оплата</button>
+			<button class="nav_info_btn">Доставка</button>
+			<button class="nav_info_btn">Гарантия</button>
+			<button class="nav_info_btn">Профиль</button>
+			<button class="nav_info_btn">Выход</button>
+		</div>
+		<div class="nav_menu">			
+			{% block header_main %}<p class="header_main">Some Store</p>{% endblock header_main %}
+			<a id="btn_categories" class="nav_categories_btn" onclick="displayModalCategories()">
+				<img width="20px" src="{% static "icons/menu.svg" %}" alt="">
+			</a>	
+			<a id="btn_cart" class="nav_cart_btn">
+				<img width="20px" src="{% static "icons/cart.svg" %}" alt="">
+			</a>
+		</div>
+	{% endblock header %}
+		
+	</header>
+	<main class="container">	
+	{% block container %}
 	
-	{% block page__main %}{% endblock page__main %}
-
-	{% block page__footer %}{% endblock page__footer %}
-
+	{% endblock container %}		
+		<div class="content_slider">
+			<img class='slide_main' src="{% static "slides/home_s1demo.png" %}" alt="">
+			<!-- <img class='slide_main' src="/slides/home_s1.png" alt=""> -->
+			<div class="slide_main_points">
+				<div class="slide_main_point slide_main_point__active"></div>
+				<div class="slide_main_point"></div>
+				<div class="slide_main_point"></div>
+				<div class="slide_main_point"></div>
+				<div class="slide_main_point"></div>
+			</div>
+		</div>
+		<div class="content_categories_home">
+			<div class="content_categories_home_elems">
+				<button class="ticket_category_btn">
+					<img src="{% static "img/1.jpg" %}" alt="Image" class="ticket_category__img">
+					<p class="ticket_category__name">Смартфоны</p>
+					<p class="ticket_category__about">от 8 590 ₽</p>
+				</button>
+				<button class="ticket_category_btn">
+					<img src="{% static "img/2.jpg" %}" alt="Image" class="ticket_category__img">
+					<p class="ticket_category__name">Планшеты</p>
+					<p class="ticket_category__about">от 10 990 ₽</p>
+				</button>
+				<button class="ticket_category_btn">
+					<img src="{% static "img/3.jpg" %}" alt="Image" class="ticket_category__img">
+					<p class="ticket_category__name">Мониторы</p>
+					<p class="ticket_category__about">от 6 800 ₽</p>
+				</button>
+				<button class="ticket_category_btn">
+					<img src="{% static "img/4.jpg" %}" alt="Image" class="ticket_category__img">
+					<p class="ticket_category__name">Принтеры</p>
+					<p class="ticket_category__about">от 7 905 ₽</p>
+				</button>
+				<button class="ticket_category_btn">
+					<img src="{% static "img/5.jpg" %}" alt="Image" class="ticket_category__img">
+					<p class="ticket_category__name">Ноутбуки</p>
+					<p class="ticket_category__about">от 33 459 ₽</p>
+				</button>
+				<button class="ticket_category_btn">
+					<img src="{% static "img/6.jpg" %}" alt="Image" class="ticket_category__img">
+					<p class="ticket_category__name">Аксессуары</p>
+					<p class="ticket_category__about">от 129 ₽</p>
+				</button>
+			</div>
+		</div>
+		<div class="content">	
+			<h1 class="products_header">Новинки</h1>
+			<div class="content_products_home">
+				<div class="content_products_home__elems">
+					<button class="product_pos_btn">
+						<img src="{% static "icons/question.svg" %}" alt="Image" class="product_pos__img">
+						<p class="product_pos__name">Названиие</p>
+						<p class="product_pos__pricetag">- <span>₽</span></p>
+					</button>
+					<button class="product_pos_btn">
+						<img src="{% static "icons/question.svg" %}" alt="Image" class="product_pos__img">
+						<p class="product_pos__name">Название</p>
+						<p class="product_pos__pricetag">- <span>₽</span></p>
+					</button>
+					<button class="product_pos_btn">
+						<img src="{% static "icons/question.svg" %}" alt="Image" class="product_pos__img">
+						<p class="product_pos__name">Название</p>
+						<p class="product_pos__pricetag">- <span>₽</span></p>
+					</button>
+				</div>
+				<div class="content_products_home__elems">
+					<button class="product_pos_btn">
+						<img src="{% static "icons/question.svg" %}" alt="Image" class="product_pos__img">
+						<p class="product_pos__name">Название</p>
+						<p class="product_pos__pricetag">- <span>₽</span></p>
+					</button>
+					<button class="product_pos_btn">
+						<img src="{% static "icons/question.svg" %}" alt="Image" class="product_pos__img">
+						<p class="product_pos__name">Название</p>
+						<p class="product_pos__pricetag">- <span>₽</span></p>
+					</button>
+					<button class="product_pos_btn">
+						<img src="{% static "icons/question.svg" %}" alt="Image" class="product_pos__img">
+						<p class="product_pos__name">Название</p>
+						<p class="product_pos__pricetag">- <span>₽</span></p>
+					</button>
+				</div>
+			</div>	
+			<h1 class="brands_header">Бренды</h1>
+			<div class="content_brands_home">
+				<div class="content_brands_home__elems">
+					<button class="brand_pos_btn">
+						<img src="{% static "brands/apple.svg" %}" alt="Apple" class="brand_pos__img">
+					</button>
+					<button class="brand_pos_btn">
+						<img src="{% static "brands/microsoft.svg" %}" alt="Microsoft" class="brand_pos__img">
+					</button>
+					<button class="brand_pos_btn">
+						<img src="{% static "brands/dell.svg" %}" alt="Dell" class="brand_pos__img">
+					</button>
+				</div>
+				<div class="content_brands_home__elems">
+					<button class="brand_pos_btn">
+						<img src="{% static "brands/western-digital.svg" %}" alt="Wester Digital" class="brand_pos__img">
+					</button>
+					<button class="brand_pos_btn">
+						<img src="{% static "brands/samsung.svg" %}" alt="Samsung" class="brand_pos__img">
+					</button>
+					<button class="brand_pos_btn">
+						<img src="{% static "brands/hp.svg" %}" alt="HP" class="brand_pos__img">
+					</button>
+				</div>
+			</div>
+			<h1 class="products_header">Популярное</h1>
+			<div class="content_products_home">
+				<div class="content_products_home__elems">
+					<button class="product_pos_btn">
+						<img src="{% static "icons/question.svg" %}" alt="Image" class="product_pos__img">
+						<p class="product_pos__name">Название</p>
+						<p class="product_pos__pricetag">- <span>₽</span></p>
+					</button>
+					<button class="product_pos_btn">
+						<img src="{% static "icons/question.svg" %}" alt="Image" class="product_pos__img">
+						<p class="product_pos__name">Название</p>
+						<p class="product_pos__pricetag">- <span>₽</span></p>
+					</button>
+					<button class="product_pos_btn">
+						<img src="{% static "icons/question.svg" %}" alt="Image" class="product_pos__img">
+						<p class="product_pos__name">Название</p>
+						<p class="product_pos__pricetag">- <span>₽</span></p>
+					</button>
+				</div>
+				<div class="content_products_home__elems">
+					<button class="product_pos_btn">
+						<img src="{% static "icons/question.svg" %}" alt="Image" class="product_pos__img">
+						<p class="product_pos__name">Название</p>
+						<p class="product_pos__pricetag">- <span>₽</span></p>
+					</button>
+					<button class="product_pos_btn">
+						<img src="{% static "icons/question.svg" %}" alt="Image" class="product_pos__img">
+						<p class="product_pos__name">Название</p>
+						<p class="product_pos__pricetag">- <span>₽</span></p>
+					</button>
+					<button class="product_pos_btn">
+						<img src="{% static "icons/question.svg" %}" alt="Image" class="product_pos__img">
+						<p class="product_pos__name">Название</p>
+						<p class="product_pos__pricetag">- <span>₽</span></p>
+					</button>
+				</div>
+			</div>	
+		</div>
+	</main>
+	<footer class="footer">
+		<div class="content_footer">
+			<div class="content_footer__left">
+				<div class="content_footer__col">
+					<p class="header_col">Some Store</p>
+					<a>О нас</a>
+					<a>Оплата</a>
+					<a>Доставка</a>
+					<a>Гарантия</a>
+					<a>Карта сайта</a>
+				</div>
+				<div class="content_footer__col">
+					<p class="header_col">Акции</p>
+					<a>Бонусная карта</a>
+					<a>Беплатная доставка</a>
+					<a>Акционный товар</a>
+					<a>Подписаться на рассылку</a>
+				</div>
+			</div>
+			<div class="content_footer__right">
+				<div class="content_footer__col">
+					<p class="header_col">Контакты</p>
+					<a>8 (951) 987-65-43</a>
+					<a>feedback@somestore.com</a>
+					<span>● ● ●</span>
+					<a>ул. Ленина, 15</a>
+					<a>ул. Шоссе Космонавтов, 88</a>
+				</div>
+				<div class="content_footer__col">
+					<p class="header_col">Мы в соц. сетях</p>
+					<a>
+						<img src="{% static "icons/vk.svg" %}" alt="">ВКонтакте
+					</a>
+					<a>
+						<img src="{% static "icons/instagram.svg" %}" alt="">Instagram
+					</a>
+					<a>
+						<img src="{% static "icons/facebook.svg" %}" alt="">Facebook
+					</a>
+					<a>
+						<img src="{% static "icons/telegram.svg" %}" alt="">Telegram
+					</a>
+				</div>
+			</div>
+		</div>		
+		<div class="content_footer__end">
+			<p>2020, Some Store. Пермь, Россия</p>
+		</div>
+	</footer>
 </body>
 </html>
