@@ -1,10 +1,12 @@
 from django.http import HttpResponse
 from django.shortcuts import render
+from django.core import serializers
 import json
+import store.models
 
 
 def index(request):
-    return 0
+    return render(request, "index.html", {})
 
 
 def product_place(request, product, brand=None):
@@ -29,7 +31,11 @@ def api(request):
 
 
 def api_get_product(request, category, brand=None):
-    
-    return 8
+    # category = store.models.category.get(id=category)
+    # brand = store.models.brand.
+    product = store.models.product.objects.get(cat_id=category) if brand == None else models.product.objects.get(cat_id=category, brand=brand)
+    json_product = serializers.serialize("xml", product)
+
+    return HttpResponse(json_product)
 
 # Create your views here.
