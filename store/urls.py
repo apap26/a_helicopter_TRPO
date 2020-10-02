@@ -8,6 +8,11 @@ urlpatterns = [
     path('product/<str:category>/', views.product_place),
     path('brand/', views.brand),
     path('brand/<str:brand>/', views.brand_page),
-    path('api/<int:category>/',views.api_get_product),
-    path('api/<int:category>/<int:brand>/', views.api_get_product)
+    path('api/get_product/<int:category>/',views.api_get_product),
+    path('api/get_product/<int:category>/<int:brand>/', views.api_get_product),
+    path('api/new/', views.api_new),
+    path('api/brand/', views.api_brand),
+    path('api/popular/', views.api_pop),
+    path('api/category/', views.api_category),
+    path('api/product/<int:cat_id>/', views.api_products)
 ]
