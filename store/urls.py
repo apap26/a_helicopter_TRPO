@@ -4,7 +4,6 @@ from django.views.generic import RedirectView
 from store import views
 
 urlpatterns = [
-    path('favicon.ico', RedirectView.as_view(url='/static/img/favicon.ico', permanent=True)),
     path('', views.index),
     path('product/id<int:id>/', views.product),
     path('product/<int:category>/<int:brand>/', views.product_place),
@@ -22,6 +21,6 @@ urlpatterns = [
     ### HARDCODE BLOCK
     path("about", views.about),
     path("payment", views.payment),
-    path("delivery", views.delivery),	
+    path("delivery", views.delivery),
     path("warranty", views.warranty),
 ]
