@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="25"
+   height="25"
+   viewBox="0 0 6.6145832 6.6145836"
+   version="1.1"
+   id="svg8"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   sodipodi:docname="filter_radio_false.svg">
+  <defs
+     id="defs2">
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter831"
+       x="-1.2e-06"
+       width="1.0000024"
+       y="-1.2e-06"
+       height="1.0000024">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="3.3072917e-06"
+         id="feGaussianBlur833" />
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="22.4"
+     inkscape:cx="19.17469"
+     inkscape:cy="9.7582989"
+     inkscape:document-units="px"
+     inkscape:current-layer="g849"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     units="px"
+     inkscape:window-width="1920"
+     inkscape:window-height="1027"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Заливка"
+     inkscape:groupmode="layer"
+     id="layer1"
+     style="display:inline">
+    <circle
+       style="fill:#e7efff;fill-opacity:1;stroke:none;stroke-width:41.6668;stroke-miterlimit:4;stroke-dasharray:none;filter:url(#filter831)"
+       id="path833"
+       cx="3.3072917"
+       cy="3.3072917"
+       r="3.3072917"
+       transform="matrix(0.59999761,0,0,0.59999761,1.3229246,1.3229246)" />
+    <text
+       xml:space="preserve"
+       style="font-size:12.7px;line-height:1.25;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI';text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;stroke-width:0.264583"
+       x="2.6340218"
+       y="2.9647508"
+       id="text837"><tspan
+         sodipodi:role="line"
+         id="tspan835"
+         x="2.6340218"
+         y="2.9647508"
+         style="text-align:center;text-anchor:middle;stroke-width:0.264583" /></text>
+  </g>
+  <g
+     id="g849"
+     inkscape:groupmode="layer"
+     inkscape:label="Белая точка"
+     style="display:inline">
+    <circle
+       transform="matrix(0.27999952,0,0,0.27999952,2.3812517,2.3812517)"
+       r="3.3072917"
+       cy="3.3072917"
+       cx="3.3072917"
+       id="circle843"
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:89.2854;stroke-miterlimit:4;stroke-dasharray:none;filter:url(#filter831)" />
+    <text
+       id="text847"
+       y="2.9647508"
+       x="2.6340218"
+       style="font-size:12.7px;line-height:1.25;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI';text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;stroke-width:0.264583"
+       xml:space="preserve"><tspan
+         style="text-align:center;text-anchor:middle;stroke-width:0.264583"
+         y="2.9647508"
+         x="2.6340218"
+         id="tspan845"
+         sodipodi:role="line" /></text>
+  </g>
+</svg>

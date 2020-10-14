@@ -1,0 +1,200 @@
+{% extends "base_extended.html" %}
+{% load static %}
+
+{% comment %}
+
+# cart.html 
+# Подраздел "корзина", раздел "профиль" 
+
+{% endcomment %}
+
+{% block page__main %}
+<main id="view_page" class="container container_display">			
+	<div id="__DYNAMIC_CONTENT__" class="content">	
+		<h1>Профиль - корзина</h1>
+		<div class="content_profile">
+			<div class="content_sidebar_nav">					
+				<div class="content_sidebar_nav__elems">
+					<a class="sidebar_photo">
+						<img src={% static "photo/CaXEXWsUMAAwnTE.jpg">
+					</a>
+					<p class="sidebar_myname">Катаев Алексей Александрович</p>	
+					<p class="sidebar_myphone">Тел. +7 (950) 473-71-06</p>				
+				</div>		
+				<div class="content_sidebar_nav__elems">
+					<p class="sidebar_block_name" title="Личная информация">Личная информация</p>
+					<div class="sidebar_links">
+						<a href="">Мои данные</a>
+						<a href="">Выход</a>
+					</div>
+				</div>
+				<div class="content_sidebar_nav__elems">
+					<p class="sidebar_block_name" title="Активность">Активность</p>
+					<div class="sidebar_links">
+						<a href="">Корзина</a>
+						<a href="">Избранное</a>
+						<a href="">Заказы</a>
+						<a href="">Завершённые покупки</a>
+						<a href="">Возвраты</a>
+					</div>
+				</div>
+				<div class="content_sidebar_nav__elems">
+					<p class="sidebar_block_name" title="Отзывы, комментарии, поддержка">Отзывы, комментарии, поддержка</p>
+					<div class="sidebar_links">
+						<a href="">Мои отзывы и комментарии</a>
+						<a href="">Обращения в службу поддержки</a>
+						<a href="">Заказы</a>
+						<a href="">Завершённые покупки</a>
+						<a href="">Возвраты</a>
+					</div>
+				</div>
+			</div>
+			<div id="__DYNAMIC_CHILD_CONTENT__">
+
+				<div class="content_with_sidebar__elems">
+					<div class="profile_about">
+						<h2>Оформление</h2>
+						<div class="profile_about__elems">
+							<p>Пункт выдачи</p>
+							<p>г. Пермь, ул. Ленина, 15</p>
+						</div>
+						<div class="profile_about__elems">
+							<p>График работы</p>
+							<p>ПН-ВС: 9:00 - 20:00</p>
+						</div>
+						<div class="profile_about__elems">
+							<p>Способ оплаты</p>
+							<div id="select_payment_method" class="select_radio">
+								<div class="select_radio__elems">
+									<input type="radio" name="select_payment_method" id="priceIncrease">
+									<label for="priceIncrease">Банковская карта</label>
+								</div>
+								<div class="select_radio__elems">
+									<input type="radio" name="select_payment_method" id="priceDecrease">								
+									<label for="priceDecrease">Наличный расчёт</label>
+								</div>
+							</div>
+						</div>
+						<div class="profile_about__elems">
+							<p>Выбранная карта</p>
+							<div id="select_card" class="select_select">
+								<select class="select_select__elems">
+									<option class="mastercard_back_mono">Mastercard **8889</option>
+									<option class="visa_back_mono">Visa **0349</option>
+									<option class="visa_back_mono">Visa **0889</option>										
+									<option class="mir_back_mono">Мир **1366</option>
+								</select>
+							</div>
+						</div>
+
+						<a href="">Применить</a>
+					</div>
+					<div class="profile_about">
+						<h2>Добавленные товары</h2>
+						<div class="content_with_sidebar__elems elems_flex">
+							<button class="product_pos_btn">
+								<img src={% static "icons/question.svg" %} alt="Image" class="product_pos__img">
+								<p class="product_pos__name">Названиие</p>
+								<p class="product_pos__pricetag">- <span>₽</span></p>
+							</button>
+							<button class="product_pos_btn">
+								<img src={% static "icons/question.svg" %} alt="Image" class="product_pos__img">
+								<p class="product_pos__name">Название</p>
+								<p class="product_pos__pricetag">- <span>₽</span></p>
+							</button>
+						</div>
+						<div class="content_with_sidebar__elems elems_flex">
+							<div class="product_count_change__block">
+								<button class="product_pos_count_change_btn">
+									<p>-</p>
+								</button>	
+								<input class="product_pos_count" type="text" value="1">
+								<button class="product_pos_count_change_btn">
+									<p>+</p>
+								</button>	
+							</div>			
+							<div class="product_count_change__block">
+								<button class="product_pos_count_change_btn">
+									<p>-</p>
+								</button>	
+								<input class="product_pos_count" type="text" value="1">									
+								<button class="product_pos_count_change_btn">
+									<p>+</p>
+								</button>	
+							</div>					
+						</div>
+						<div class="content_with_sidebar__elems elems_flex">
+							<button class="product_pos_btn">
+								<img src={% static "icons/question.svg" %} alt="Image" class="product_pos__img">
+								<p class="product_pos__name">Название</p>
+								<p class="product_pos__pricetag">- <span>₽</span></p>
+							</button>
+							<button class="product_pos_btn">
+								<img src={% static "icons/question.svg" %} alt="Image" class="product_pos__img">
+								<p class="product_pos__name">Название</p>
+								<p class="product_pos__pricetag">- <span>₽</span></p>
+							</button>
+						</div>
+						<div class="content_with_sidebar__elems elems_flex">
+							<div class="product_count_change__block">
+								<button class="product_pos_count_change_btn">
+									<p>-</p>
+								</button>	
+								<input class="product_pos_count" type="text" value="1">
+								<button class="product_pos_count_change_btn">
+									<p>+</p>
+								</button>	
+							</div>			
+							<div class="product_count_change__block">
+								<button class="product_pos_count_change_btn">
+									<p>-</p>
+								</button>	
+								<input class="product_pos_count" type="text" value="1">									
+								<button class="product_pos_count_change_btn">
+									<p>+</p>
+								</button>	
+							</div>					
+						</div>
+						<div class="content_with_sidebar__elems elems_flex">
+							<button class="product_pos_btn">
+								<img src={% static "icons/question.svg" %} alt="Image" class="product_pos__img">
+								<p class="product_pos__name">Название</p>
+								<p class="product_pos__pricetag">- <span>₽</span></p>
+							</button>
+							<button class="product_pos_btn">
+								<img src={% static "icons/question.svg" %} alt="Image" class="product_pos__img">
+								<p class="product_pos__name">Название</p>
+								<p class="product_pos__pricetag">- <span>₽</span></p>
+							</button>
+						</div>
+						<div class="content_with_sidebar__elems elems_flex">
+							<div class="product_count_change__block">
+								<button class="product_pos_count_change_btn">
+									<p>-</p>
+								</button>	
+								<input class="product_pos_count" type="text" value="1">
+								<button class="product_pos_count_change_btn">
+									<p>+</p>
+								</button>	
+							</div>			
+							<div class="product_count_change__block">
+								<button class="product_pos_count_change_btn">
+									<p>-</p>
+								</button>	
+								<input class="product_pos_count" type="text" value="1">									
+								<button class="product_pos_count_change_btn">
+									<p>+</p>
+								</button>	
+							</div>					
+						</div>
+						<p class="cart_total_pricetag">Итого к оплате: <span>15 583</span> ₽</p>
+						<button class="cart_buy_btn">Оплатить</button>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		</div>
+	</div>
+</main>
+{% endblock page__main %}
