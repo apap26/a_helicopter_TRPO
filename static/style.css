@@ -98,7 +98,7 @@ h2 {
 /* Главный заголовок сайта */
 .header_main {
 	position: absolute;
-	width: 200px;
+
 	left: 50%;
 	transform: translateX(-50%);
 
