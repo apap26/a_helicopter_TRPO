@@ -99,7 +99,7 @@ h2 {
 
 	left: 50%;
 	transform: translateX(-50%);
-
+	weight: 500;
 	font-size: 30px;
 	font-weight: 300;
 	text-align: center;
