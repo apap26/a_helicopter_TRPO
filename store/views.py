@@ -65,4 +65,13 @@ def api_category(request):
 
 def api_products(request):
     return 437
+
+
+
+### HARDCODE BLOCK
+
+
+def about(request):
+    ret = render(request, 'about.html', {})
+    return ret
 # Create your views here.
