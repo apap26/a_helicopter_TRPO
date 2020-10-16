@@ -63,8 +63,32 @@ def api_category(request):
     return HttpResponse(js)
 
 
-def api_products(request):
-    return 437
+def api_products(request, cat_id):
+    POSX = 'POSX'
+    LENGS = 'LENGS'
+
+    if (request.GET.get(POSX) != None and request.GET.get(LENGS) != None):
+        try:
+            start = int(request.GET.get(POSX))
+            limit = int(request.GET.get(LENGS))
+        except:
+            product = models.product.objects.raw(
+                "select * from `store_product` where cat_id_id = {3} desc limit {0}, {1}".format(str(0),
+                                                                                                 str(100),
+                                                                                                 str(cat_id)))
+            return HttpResponse(serializers.serialize("json", product))
+        product = models.product.objects.raw(
+            "select * from `store_product` where cat_id_id = {3} desc limit {0}, {1}".format(str(start),
+                                                                                             str(start + limit),
+                                                                                             str(cat_id)))
+        return HttpResponse(serializers.serialize("json", product))
+    else:
+        product = models.product.objects.raw(
+            "select * from `store_product` where cat_id_id = {3} desc limit {0}, {1}".format(str(0),
+                                                                                             str(100),
+                                                                                             str(cat_id)))
+        return HttpResponse(serializers.serialize("json", product))
+
 
 
 
