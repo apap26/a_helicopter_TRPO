@@ -63,33 +63,37 @@ def api_category(request):
     return HttpResponse(js)
 
 
-def api_products(request, cat_id):
+def api_products(request, category, brand=None):
     POSX = 'POSX'
     LENGS = 'LENGS'
-
+    a = 1
     if (request.GET.get(POSX) != None and request.GET.get(LENGS) != None):
         try:
             start = int(request.GET.get(POSX))
             limit = int(request.GET.get(LENGS))
+            js = products_to_json(start, start+limit, category, brand)
+            return HttpResponse(js)
         except:
-            product = models.product.objects.raw(
-                "select * from `store_product` where cat_id_id = {3} desc limit {0}, {1}".format(str(0),
-                                                                                                 str(100),
-                                                                                                 str(cat_id)))
-            return HttpResponse(serializers.serialize("json", product))
-        product = models.product.objects.raw(
-            "select * from `store_product` where cat_id_id = {3} desc limit {0}, {1}".format(str(start),
-                                                                                             str(start + limit),
-                                                                                             str(cat_id)))
-        return HttpResponse(serializers.serialize("json", product))
+            js = products_to_json(0, 100, category, brand)
+            return HttpResponse(js)
     else:
-        product = models.product.objects.raw(
-            "select * from `store_product` where cat_id_id = {3} desc limit {0}, {1}".format(str(0),
-                                                                                             str(100),
-                                                                                             str(cat_id)))
-        return HttpResponse(serializers.serialize("json", product))
+        js = products_to_json(0, 100, category, brand)
+        return HttpResponse(js)
 
 
+def products_to_json(start, end, category, brand = None):
+    product = models.product.objects.raw(
+        "select * FROM `store_product` where cat_id_id = {0} order by id desc limit {1}, {2}".format(category,
+                                                                                                     start,
+                                                                                                     end))
+    # Я имал djang овскую подстановку с защитой от sql инъекций, фигли то оно не работает, шатал я его дом изба
+    # пускай ОбстрОктные хаЦкеры ломают этот сайт, я имал этот дом изба!!!
+    result = []
+    for i in product:
+        result.append({'id': i.id, 'name': i.name, 'price':  float(i.price),
+                       'image': i.image.url, 'about': i.about, 'brand_id': i.brand_id})
+    js = json.dumps(result)
+    return js
 
 
 ### HARDCODE BLOCK
