@@ -65,11 +65,12 @@ class product(models.Model):
     weight = models.IntegerField() # А если мы на развес огурчики продаем?
     id_country = models.ForeignKey(country, on_delete=models.CASCADE)
     id_postavshik = models.ForeignKey(postavshik,on_delete=models.CASCADE)
-    id_events = models.ForeignKey(events, on_delete=models.CASCADE) # Откуда? что это?
     image = models.ImageField()
     about = models.TextField(default="Краткое описание отсутствует")
     html_about = models.CharField(max_length=50, default="")
     brand = models.ForeignKey(brand, on_delete=models.CASCADE)
+    is_popular = models.BooleanField()
+    date_add = models.DateField(auto_now_add=True)
 
 
 
