@@ -8,6 +8,10 @@ import store.models
 from store import models
 from django.utils import timezone, dateformat
 
+"""
+Динамическая вёрстка
+"""
+
 def index(request):
     return render(request, "index.html", {})
 
@@ -28,7 +32,9 @@ def brand_page(request, brand):
     return -3
 
 
-# --------------------------------------------------------------------------------------------------------------------
+"""
+Открытый программный интерфейс веб-приложения
+"""
 
 def api(request):
     return HttpResponse("?")
@@ -41,17 +47,14 @@ def api_new(request):
     js = serialaze_products(new_product)
     return HttpResponse(js)
 
-
 def api_brand(request):
     brands = models.brand.objects.all()
     return HttpResponse(serializers.serialize("json", brands))
-
 
 def api_pop(request):
     popular = models.product.objects.all().filter(is_popular=True)
     js = serialaze_products(popular)
     return HttpResponse(js)
-
 
 def api_category(request):
     categories = models.category.objects.all()
@@ -60,7 +63,6 @@ def api_category(request):
         result.append({'id': i.id, 'name': i.name, 'url': '/product/' + i.name + "/"})
     js = json.dumps(result)
     return HttpResponse(js)
-
 
 def api_products(request, category, brand=None): # Эта функция просит чтобы ее убили
     POSX = 'POSX'
@@ -77,7 +79,6 @@ def api_products(request, category, brand=None): # Эта функция про�
     else:
         js = products_to_json(0, 100, category, brand)
         return HttpResponse(js)
-
 
 def products_to_json(start, end, category, brand=None):
     if brand == None:
@@ -97,7 +98,6 @@ def products_to_json(start, end, category, brand=None):
     js = serialaze_products(product)
     return js
 
-
 def serialaze_products(product):
     result = []
     for i in product:
@@ -107,22 +107,22 @@ def serialaze_products(product):
     return js
 
 
-### HARDCODE BLOCK
+"""
+Полностью статичная вёрстка
+"""
 
-
-def about(request):
+def about(request):			# О магазине
     ret = render(request, 'about.html', {})
     return ret
 
-def payment(request):
+def payment(request):		# Об плате
     ret = render(request, 'payment.html', {})
     return ret
 
-def delivery(request):
+def delivery(request):		# Доставка
     ret = render(request, 'delivery.html', {})
     return ret
 
-def warranty(request):
+def warranty(request):		# Гарантия
     ret = render(request, 'warranty.html', {})
     return ret
-# Create your views here.

@@ -15,7 +15,7 @@
 
 <script	src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
 <script type="text/javascript" src={% static "scripts/views.js" %}></script>
-<script type="text/javascript" src={% static "scripts/vue.js" %}></script>
+<script type="text/javascript" src={% static "scripts/nav.js" %}></script>
 <script src={% static "scripts/slider.js" %}></script>
 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -61,7 +61,7 @@
         <a href="" class="nav_info_btn">Авторизация</a>
     </div>
     <div class="nav_menu">
-        <p class="header_main">A. Helicopter</p>
+        <p class="header_main" onclick="goTo('/')">A. Helicopter</p>
         <a id="btn_categories" class="nav_categories_btn" onclick="displayModalCategories()">
             <img width="20px" src={% static "icons/menu.svg" %} alt="">
         </a>
@@ -122,7 +122,6 @@
     </div>
     <div class="content_footer__end">
         <p>2020, Attack Helicopter Store. Пермь, Россия</p>
-        <!-- Да ебн рот это казино -->
     </div>
 </footer>
 {% endblock page__footer %}
