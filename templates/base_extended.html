@@ -22,7 +22,7 @@
 <link rel="stylesheet" href={% static "style_slider.css" %}>
 <link rel="stylesheet" href={% static "style.css" %}>
 
-<title>Attack Helicopter  Store</title>
+<title>A. Helicopter</title>
 {% endblock layout__head %}
 
 {% block page__container_modal %}
@@ -54,14 +54,14 @@
 {% block page__header %}
 <header class="header">
     <div class="nav_info">
-        <button class="nav_info_btn">О нас</button>
-        <button class="nav_info_btn">Оплата</button>
-        <button class="nav_info_btn">Доставка</button>
-        <button class="nav_info_btn">Гарантия</button>
-        <button class="nav_info_btn">Авторизация</button>
+        <a href="about" class="nav_info_btn">О нас</a>
+        <a href="payment" class="nav_info_btn">Оплата</a>
+        <a href="delivery" class="nav_info_btn">Доставка</a>
+        <a href="warranty" class="nav_info_btn">Гарантия</a>
+        <a href="" class="nav_info_btn">Авторизация</a>
     </div>
     <div class="nav_menu">
-        <p class="header_main">Attack Helicopter Store</p>
+        <p class="header_main">A. Helicopter</p>
         <a id="btn_categories" class="nav_categories_btn" onclick="displayModalCategories()">
             <img width="20px" src={% static "icons/menu.svg" %} alt="">
         </a>

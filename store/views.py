@@ -113,4 +113,16 @@ def serialaze_products(product):
 def about(request):
     ret = render(request, 'about.html', {})
     return ret
+
+def payment(request):
+    ret = render(request, 'payment.html', {})
+    return ret
+
+def delivery(request):
+    ret = render(request, 'delivery.html', {})
+    return ret
+
+def warranty(request):
+    ret = render(request, 'warranty.html', {})
+    return ret
 # Create your views here.
