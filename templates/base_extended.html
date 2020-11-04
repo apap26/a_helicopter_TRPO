@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% comment %}
+
+# base_extended.html 
+# Содержит базовые header и footer, является расширением базового шаблона base.html
+# Наследуется всеми страницами веб-приложения, кроме страниц для брендов
+
+{% endcomment %}
+
+{% block layout__head %}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script	src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
+<script type="text/javascript" src={% static "scripts/views.js" %}></script>
+<script type="text/javascript" src={% static "scripts/nav.js" %}></script>
+<script src={% static "scripts/slider.js" %}></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href={% static "style_slider.css" %}>
+<link rel="stylesheet" href={% static "style.css" %}>
+
+<title>A. Helicopter</title>
+{% endblock layout__head %}
+
+{% block page__container_modal %}
+<div id="view_categories" class="container_modal">
+    <div class="header_modal">
+        <div class="nav_menu">
+            <p class="header_main">Каталог</P>
+            <a class="close_categories_btn" title="Закрыть" onclick="displayModalCategories()">
+                <img width="20px" src={% static "icons/cancel.svg" %} alt="⨉">
+            </a>
+        </div>
+    </div>
+    <div class="content_modal_categories">
+        <a class="name_category_group">Телевизоры, аудио, видео</a>
+        <a class="name_category_group">Смартфоны и гаджеты</a>
+        <a class="name_category_group">Компьютеры и ноутбуки</a>
+        <a class="name_category_group">Техника для дома</a>
+        <a class="name_category_group">Техника для кухни</a>
+        <a class="name_category_group">Красота и здоровье</a>
+        <a class="name_category_group">Фото и видео</a>
+        <a class="name_category_group">Игры, софт и развлечения</a>
+        <a class="name_category_group">Сад и ремонт</a>
+        <a class="name_category_group">Товары для авто</a>
+        <a class="name_category_group">Подарочные купоны и бонусные карты</a>
+        <img class="modal_categories_logo" src={% static "icons/catalogue.svg" %} alt="">
+    </div>
+</div>
+{% endblock page__container_modal %}
+{% block page__header %}
+<header class="header">
+    <div class="nav_info">
+        <a href="about" class="nav_info_btn">О нас</a>
+        <a href="payment" class="nav_info_btn">Оплата</a>
+        <a href="delivery" class="nav_info_btn">Доставка</a>
+        <a href="warranty" class="nav_info_btn">Гарантия</a>
+        <a href="" class="nav_info_btn">Авторизация</a>
+    </div>
+    <div class="nav_menu">
+        <p class="header_main" onclick="goTo('/')">A. Helicopter</p>
+        <a id="btn_categories" class="nav_categories_btn" onclick="displayModalCategories()">
+            <img width="20px" src={% static "icons/menu.svg" %} alt="">
+        </a>
+        <a id="btn_cart" class="nav_cart_btn">
+            <img width="20px" src={% static "icons/cart.svg" %} alt="">
+        </a>
+    </div>
+</header>
+{% endblock page__header %}
+
+{% block page__main %}
+{% endblock page__main %}
+
+{% block page__footer %}
+<footer class="footer">
+    <div class="content_footer">
+        <div class="content_footer__left">
+            <div class="content_footer__col">
+                <p class="header_col">Some Store</p>
+                <a>О нас</a>
+                <a>Оплата</a>
+                <a>Доставка</a>
+                <a>Гарантия</a>
+                <a>Карта сайта</a>
+            </div>
+            <div class="content_footer__col">
+                <p class="header_col">Акции</p>
+                <a>Бонусная карта</a>
+                <a>Беплатная доставка</a>
+                <a>Акционный товар</a>
+                <a>Подписаться на рассылку</a>
+            </div>
+        </div>
+        <div class="content_footer__right">
+            <div class="content_footer__col">
+                <p class="header_col">Контакты</p>
+                <a>8 (951) 987-65-43</a>
+                <a>feedback@somestore.com</a>
+                <span>● ● ●</span>
+                <a>ул. Ленина, 15</a>
+            </div>
+            <div class="content_footer__col">
+                <p class="header_col">Мы в соц. сетях</p>
+                <a>
+                    <img src={% static "icons/vk.svg" %} alt="">ВКонтакте
+                </a>
+                <a>
+                    <img src={% static "icons/instagram.svg" %} alt="">Instagram
+                </a>
+                <a>
+                    <img src={% static "icons/facebook.svg" %} alt="">Facebook
+                </a>
+                <a>
+                    <img src={% static "icons/telegram.svg" %} alt="">Telegram
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="content_footer__end">
+        <p>2020, Attack Helicopter Store. Пермь, Россия</p>
+    </div>
+</footer>
+{% endblock page__footer %}

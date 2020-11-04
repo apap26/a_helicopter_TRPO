@@ -1,0 +1,31 @@
+{% load static %}
+
+{% comment %}
+
+# base.html
+# Базовый шаблон веб-приложения
+
+{% endcomment %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" type="image/png" href="{% static "img/favicon.ico" %}">
+	{% block layout__head %}
+
+
+	{% endblock layout__head %}
+
+</head>
+<body>
+
+	{% block page__container_modal %}{% endblock page__container_modal %}
+
+	{% block page__header %}{% endblock page__header%}
+	
+	{% block page__main %}{% endblock page__main %}
+
+	{% block page__footer %}{% endblock page__footer %}
+
+</body>
+</html>

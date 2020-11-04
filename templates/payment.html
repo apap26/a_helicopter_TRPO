@@ -1,0 +1,32 @@
+{% extends "base_extended.html" %}
+{% load static %}
+
+{% comment %}
+
+# profile.html 
+# Подраздел "профиль", раздел "профиль" 
+
+{% endcomment %}
+
+{% block page__main %}
+<main id="view_page" class="container container_display">			
+	<div id="__DYNAMIC_CHILD_CONTENT__" class="content">
+		<h1>Способ оплаты</h1>
+		<div class="content">
+			<div class="about_payment_method">
+				<img class="" src={% static "icons/payment-card.svg" %} alt="">
+				<div class="">
+					<p><span class="tabulation"></span>Для совершения оплаты товара могут быть доступны следующие способы оплаты:</p>
+					<ul>
+						<li>Банковская карта</li>
+						<li>Яндекс.Деньги</li>
+						<li>Система быстрых платежей</li>
+						<li>Наличный расчёт при получении товара</li>
+						<li>Сочетание способов оплаты</li>
+					</ul>
+				</div>
+			</div>
+		</div>	
+	</div>
+</main>
+{% endblock page__main %}
