@@ -6,7 +6,7 @@ from store import views
 urlpatterns = [
     path('favicon.ico', RedirectView.as_view(url='/static/img/favicon.ico', permanent=True)),
     path('', views.index),
-    path('product/id<int:id>', views.product),
+    path('product/id<int:id>/', views.product),
     path('product/<int:category>/<int:brand>/', views.product_place),
     path('product/<int:category>/', views.product_place),
     path('brand/', views.brand),

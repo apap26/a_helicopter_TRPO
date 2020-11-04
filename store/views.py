@@ -17,11 +17,11 @@ def index(request):
 
 
 def product_place(request, product, brand=None):
-    return -1
+    return render(request, "select_category.html", {})
 
 
 def product(request, id):
-    return -2
+	return -1
 
 
 def brand(request):
