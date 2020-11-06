@@ -73,6 +73,7 @@ class product(models.Model):
     date_add = models.DateField(auto_now_add=True)
 
 
+
 class storage(models.Model):
     id = models.AutoField(primary_key=True, db_index=True)
     id_product = models.ForeignKey(product, on_delete=models.CASCADE)
