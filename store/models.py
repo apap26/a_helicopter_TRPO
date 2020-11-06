@@ -1,5 +1,6 @@
 from django.db import models
-
+# suna comment
+# suna comment
 
 class brand(models.Model):
     name = models.CharField(max_length=30)
