@@ -3,15 +3,14 @@
 
 {% comment %}
 
-# select_category.html 
-# Раздел выбранной категории
+# category.html 
 
 {% endcomment %}
 
 {% block page__main %}
 <main id="view_page" class="container container_display">			
 	<div id="__DYNAMIC_CONTENT__" class="content">	
-		<h1>Название категории</h1>
+		<h1>Телевизоры, аудио и видео</h1>
 		<div class="content_products_home">
 			<div class="content_sidebar_filter">
 				<div id="filter_pricetag" class="content_sidebar_filter__elems">
@@ -72,76 +71,29 @@
 			<div id="__DYNAMIC_CHILD_CONTENT__">
 				<div class="content_with_sidebar__elems elems_flex">
 					<button class="product_pos_btn">
-						<img src={% static "icons/question.svg" %} alt="Image" class="product_pos__img">
+						<img src="res/icons/question.svg" alt="Image" class="product_pos__img">
 						<p class="product_pos__name">Названиие</p>
 						<p class="product_pos__pricetag">- <span>₽</span></p>
 					</button>
 					<button class="product_pos_btn">
-						<img src={% static "icons/question.svg" %} alt="Image" class="product_pos__img">
+						<img src="res/icons/question.svg" alt="Image" class="product_pos__img">
 						<p class="product_pos__name">Название</p>
 						<p class="product_pos__pricetag">- <span>₽</span></p>
 					</button>
 				</div>
 				<div class="content_with_sidebar__elems elems_flex">
 					<button class="product_pos_btn">
-						<img src={% static "icons/question.svg" %} alt="Image" class="product_pos__img">
+						<img src="res/icons/question.svg" alt="Image" class="product_pos__img">
 						<p class="product_pos__name">Название</p>
 						<p class="product_pos__pricetag">- <span>₽</span></p>
 					</button>
 					<button class="product_pos_btn">
-						<img src={% static "icons/question.svg" %} alt="Image" class="product_pos__img">
+						<img src="res/icons/question.svg" alt="Image" class="product_pos__img">
 						<p class="product_pos__name">Название</p>
 						<p class="product_pos__pricetag">- <span>₽</span></p>
 					</button>
 				</div>
-				<div class="content_with_sidebar__elems elems_flex">
-					<button class="product_pos_btn">
-						<img src={% static "icons/question.svg" %} alt="Image" class="product_pos__img">
-						<p class="product_pos__name">Название</p>
-						<p class="product_pos__pricetag">- <span>₽</span></p>
-					</button>
-					<button class="product_pos_btn">
-						<img src={% static "icons/question.svg" %} alt="Image" class="product_pos__img">
-						<p class="product_pos__name">Название</p>
-						<p class="product_pos__pricetag">- <span>₽</span></p>
-					</button>
-				</div>
-				<div class="content_with_sidebar__elems elems_flex">
-					<button class="product_pos_btn">
-						<img src={% static "icons/question.svg" %} alt="Image" class="product_pos__img">
-						<p class="product_pos__name">Название</p>
-						<p class="product_pos__pricetag">- <span>₽</span></p>
-					</button>
-					<button class="product_pos_btn">
-						<img src={% static "icons/question.svg" %} alt="Image" class="product_pos__img">
-						<p class="product_pos__name">Название</p>
-						<p class="product_pos__pricetag">- <span>₽</span></p>
-					</button>
-				</div>
-				<div class="content_with_sidebar__elems elems_flex">
-					<button class="product_pos_btn">
-						<img src={% static "icons/question.svg" %} alt="Image" class="product_pos__img">
-						<p class="product_pos__name">Название</p>
-						<p class="product_pos__pricetag">- <span>₽</span></p>
-					</button>
-					<button class="product_pos_btn">
-						<img src={% static "icons/question.svg" %} alt="Image" class="product_pos__img">
-						<p class="product_pos__name">Название</p>
-						<p class="product_pos__pricetag">- <span>₽</span></p>
-					</button>
-				</div>
-				<div class="content_with_sidebar__elems elems_flex">
-					<button class="product_pos_btn">
-						<img src={% static "icons/question.svg" %} alt="Image" class="product_pos__img">
-						<p class="product_pos__name">Название</p>
-						<p class="product_pos__pricetag">- <span>₽</span></p>
-					</button>
-					<button class="product_pos_btn">
-						<img src={% static "icons/question.svg" %} alt="Image" class="product_pos__img">
-						<p class="product_pos__name">Название</p>
-						<p class="product_pos__pricetag">- <span>₽</span></p>
-					</button>
-				</div>
+				<!-- ТУТ ДВЕ КНОПКИ С ДВУМЯ ТОВАРАМИ, В ОДНОЙ СТРОКЕ ГЕНЕРИРУЕТСЯ ДВЕ ВНОПКИ, Т.Е. НУЖНО СГЕНЕРИРОВАТЬ ЕЩЁ ОДНУ(НЕСКОЛЬКО) СТРОКУ(СТРОК) ДЛЯ ДОБАВЛЕНИЯ 3+ КНОПОК -->
 			</div>
 		</div>
 	</div>
