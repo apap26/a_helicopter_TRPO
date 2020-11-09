@@ -7,6 +7,7 @@ import json
 import store.models
 from store import models
 from django.utils import timezone, dateformat
+from django.core.exceptions import ObjectDoesNotExist
 
 """
 Динамическая вёрстка
@@ -23,10 +24,11 @@ def product_place(request, product, brand=None):
 
 
 def product(request, id):
-    product = models.product.objects.get(id=int(id))
-    #if product.count() == 0:
-    #    return HttpResponse("404")
-    return render(request, "product.html", {'product':product})
+    try:
+        product = models.product.objects.get(id=int(id))
+        return render(request, "product.html", {'product':product})
+    except ObjectDoesNotExist:
+        return HttpResponse("404")
 
 
 def brand(request):
