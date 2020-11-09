@@ -9,45 +9,52 @@
 {% endcomment %}
 
 {% block page__main %}
-<main id="view_page" class="container container_display">			
-	<div id="__DYNAMIC_CHILD_CONTENT__" class="content">
-		<h1>Microsoft Xbox One S All-Digital Edition</h1>
-		<div class="content_profile">
-			<div class="content_sidebar_nav">					
-				<div class="content_sidebar_nav__elems">
-					<a class="sidebar_photo_wide">
-						<img src="HTTP://TODO">
-					</a>			
-				</div>		
-				<button class="cart_buy_btn">Добавить в корзину (18 300 ₽)</button>
-			</div>
-			<div id="__DYNAMIC_CHILD_CONTENT__">
+    <main id="view_page" class="container container_display">
+        <div id="__DYNAMIC_CHILD_CONTENT__" class="content">
+            <h1>{{ product.name }}</h1>
+            <div class="content_profile">
+                <div class="content_sidebar_nav">
+                    <div class="content_sidebar_nav__elems">
+                        <a class="sidebar_photo_wide">
+                            <img src="{{ product.image }}">
+                        </a>
+                    </div>
+                    <button class="cart_buy_btn">Добавить в корзину ({{ product.price }} ₽)</button>
+                </div>
+                <div id="__DYNAMIC_CHILD_CONTENT__">
 
-				<div class="content_with_sidebar__elems">
-					<div class="profile_about">
-						<h2>Характеристики</h2>
-						<div class="profile_about__elems">
-							<p>Модель</p>
-							<p>Xbox One S All-Digital Edition</p>
-						</div>
-						<div class="profile_about__elems">
-							<p>Страна-производитель</p>
-							<p>Китай</p>
-						</div>
-						<div class="profile_about__elems">
-							<p>Вес (кг.)</p>
-							<p>1.5</p>
-						</div>
-					</div>
-					<div class="profile_about">
-						<h2>Описание</h2>
-						<p></p>
-					</div>
-				</div>
+                    <div class="content_with_sidebar__elems">
+                        <div class="profile_about">
+                            <h2>Характеристики</h2>
+                            <div class="profile_about__elems">
+                                <p>Модель</p>
+                                <p>{{ product.name }}</p>
+                            </div>
+                            <div class="profile_about__elems">
+                                <p>Страна-производитель</p>
+                                <p>{{ product.id_country.name }}</p>
+                            </div>
+                            <div class="profile_about__elems">
+                                <p>Вес (кг.)</p>
+                                <p>{{ product.weight }}</p>
+                            </div>
+                        </div>
+                        <div class="profile_about">
+                            <h2>Описание</h2>
+                            <p>
+                                <iframe id="blockrandom" name="iframe"
+                                        src="/static/html/{{product.html_about}}.html"
+                                        scrolling="auto" width="800" height="800" frameborder="1">
+                                    Эта функция работает неправильно. К сожалению, ваш браузер не поддерживает Inline
+                                    Frames.
+                                </iframe>
+                                {{ product.html_about }}</p>
+                        </div>
+                    </div>
 
-			</div>
-		</div>
-		</div>
-	</div>
-</main>
+                </div>
+            </div>
+        </div>
+        </div>
+    </main>
 {% endblock page__main %}

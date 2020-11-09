@@ -14,6 +14,7 @@ from django.utils import timezone, dateformat
 
 
 def index(request):
+
     return render(request, "index.html", {})
 
 
@@ -22,7 +23,10 @@ def product_place(request, product, brand=None):
 
 
 def product(request, id):
-    return render(request, "product.html", {})
+    product = models.product.objects.get(id=int(id))
+    #if product.count() == 0:
+    #    return HttpResponse("404")
+    return render(request, "product.html", {'product':product})
 
 
 def brand(request):
