@@ -111,7 +111,6 @@ h2 {
 }
 
 
-
 /* Содержит в себе блоки content* */
 .container {
 	display: none;
@@ -327,6 +326,13 @@ h2 {
 	text-align: center;
 }
 .sidebar_photo img {width: 150px;}
+.sidebar_photo_wide {
+	position: relative;
+	width: 100%;
+}
+.sidebar_photo_wide img {
+	width: 100%;
+}
 .sidebar_links a {
 	display: block;
 	width: calc(100% + 15px);
@@ -380,6 +386,9 @@ h2 {
 	flex-wrap: wrap;
 	justify-content: space-between;
 }
+.profile_about p {
+	line-height: 1.5;
+}
 .profile_about a {
 	width: 100%;
 	color: #2d62c4;
@@ -400,6 +409,15 @@ h2 {
 	flex-basis: 50%;
 	max-width: 50%;
 	flex-grow: 1;
+}
+.profile_about__elems p span {
+	display: inline-block;
+	margin: 5px auto;
+	padding: 0 10px;
+	border-radius: 3px;
+	background-color: #85a5e2;
+	color: white;
+	font-weight: 600;
 }
 .cart_total_pricetag {
 	width: 100%;

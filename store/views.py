@@ -12,6 +12,7 @@ from django.utils import timezone, dateformat
 Динамическая вёрстка
 """
 
+
 def index(request):
     return render(request, "index.html", {})
 
@@ -21,7 +22,7 @@ def product_place(request, product, brand=None):
 
 
 def product(request, id):
-	return -1
+    return render(request, "product.html", {})
 
 
 def brand(request):
@@ -36,6 +37,7 @@ def brand_page(request, brand):
 Открытый программный интерфейс веб-приложения
 """
 
+
 def api(request):
     return HttpResponse("?")
 
@@ -47,14 +49,17 @@ def api_new(request):
     js = serialaze_products(new_product)
     return HttpResponse(js)
 
+
 def api_brand(request):
     brands = models.brand.objects.all()
     return HttpResponse(serializers.serialize("json", brands))
+
 
 def api_pop(request):
     popular = models.product.objects.all().filter(is_popular=True)
     js = serialaze_products(popular)
     return HttpResponse(js)
+
 
 def api_category(request):
     categories = models.category.objects.all()
@@ -64,7 +69,8 @@ def api_category(request):
     js = json.dumps(result)
     return HttpResponse(js)
 
-def api_products(request, category, brand=None): # Эта функция просит чтобы ее убили
+
+def api_products(request, category, brand=None):  # Эта функция просит чтобы ее убили
     POSX = 'POSX'
     LENGS = 'LENGS'
     if (request.GET.get(POSX) != None and request.GET.get(LENGS) != None):
@@ -79,6 +85,7 @@ def api_products(request, category, brand=None): # Эта функция про�
     else:
         js = products_to_json(0, 100, category, brand)
         return HttpResponse(js)
+
 
 def products_to_json(start, end, category, brand=None):
     if brand == None:
@@ -98,6 +105,7 @@ def products_to_json(start, end, category, brand=None):
     js = serialaze_products(product)
     return js
 
+
 def serialaze_products(product):
     result = []
     for i in product:
@@ -111,18 +119,22 @@ def serialaze_products(product):
 Полностью статичная вёрстка
 """
 
-def about(request):			# О магазине
+
+def about(request):  # О магазине
     ret = render(request, 'about.html', {})
     return ret
 
-def payment(request):		# Об плате
+
+def payment(request):  # Об плате
     ret = render(request, 'payment.html', {})
     return ret
 
-def delivery(request):		# Доставка
+
+def delivery(request):  # Доставка
     ret = render(request, 'delivery.html', {})
     return ret
 
-def warranty(request):		# Гарантия
+
+def warranty(request):  # Гарантия
     ret = render(request, 'warranty.html', {})
     return ret
