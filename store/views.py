@@ -13,14 +13,23 @@ from django.core.exceptions import ObjectDoesNotExist
 Динамическая вёрстка
 """
 
+def e404(request):
+    return HttpResponse("404")
+
 
 def index(request):
-
     return render(request, "index.html", {})
 
 
-def product_place(request, product, brand=None):
-    return render(request, "select_category.html", {})
+def product_place(request, category, brand=None):
+    try:
+        category = models.category.objects.get(id=category)
+        products = models.product.objects.filter(cat_id=category) if brand == None else models.product.objects.filter(cat_id=category, brand_id=brand)
+        return render(request, "select_category.html", {'category':category, 'products':products})
+
+    except ObjectDoesNotExist:
+        return e404(request)
+
 
 
 def product(request, id):
