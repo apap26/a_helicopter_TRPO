@@ -39,22 +39,19 @@
                                 <p>{{ product.weight }}</p>
                             </div>
                         </div>
-                        <div class="profile_about">
-                            <h2>Описание</h2>
-                            <p>
-                                <iframe id="blockrandom" name="iframe"
-                                        src="/static/html/{{product.html_about}}.html"
-                                        scrolling="auto" width="800" height="800" frameborder="1">
-                                    Эта функция работает неправильно. К сожалению, ваш браузер не поддерживает Inline
-                                    Frames.
-                                </iframe>
-                            </p>
-                        </div>
+						<h2>Описание</h2>
+						<p>
+							<iframe class="about_html" id="blockrandom" name="iframe"
+									src="/static/html/{{product.html_about}}.html"
+									scrolling="auto" width="800" height="800" frameborder="1">
+								Эта функция работает неправильно. К сожалению, ваш браузер не поддерживает Inline
+								Frames.
+							</iframe>
+						</p>
                     </div>
 
                 </div>
             </div>
-        </div>
         </div>
     </main>
 {% endblock page__main %}

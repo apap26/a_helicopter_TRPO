@@ -36,6 +36,8 @@ img {vertical-align: top;}
 
 h2, h3, h4, h5, h6 {font-size:inherit; font-weight: 400;}
 
+
+
 h1 {
 	margin: 20px auto;
 	font-size: 30px;
@@ -54,7 +56,11 @@ h2 {
 .tabulation {margin-right: 40px;}
 .left_side {float: left; margin-right: 20px;}
 .right_side {float: right; margin-left: 20px;}
-
+.about_html {
+	display: block;
+	position: relative;
+	width: 100%;
+}
 
 .header {	
 	position: fixed;	
@@ -546,13 +552,19 @@ h2 {
 	position: relative;
 	display: flex;
 	justify-content: space-between;
-}
-.elems_flex a {
-	flex-grow: 1;
-	flex-basis: 33.333%;
 	flex-wrap: wrap;
 }
-
+.elems_flex a {
+	position: relative;
+	display: flex;
+	flex-grow: 1;
+	flex-basis: 33.333%;
+	max-width: 33.333%;
+	flex-wrap: wrap;
+}
+.elems_flex a:hover {
+	z-index: 15;
+}
 
 .content_products_home__elems,
 .content_brands_home__elems { 
@@ -811,6 +823,7 @@ h2 {
 .product_pos__name {
 	vertical-align: text-bottom;
 
+	color: black;
 	font-weight: 500;
 	margin: 10px auto;
 	text-align: center;
