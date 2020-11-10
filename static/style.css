@@ -714,11 +714,13 @@ h2 {
 
 /* Кнопка "Оплатить" */
 .cart_buy_btn {
+	display: block;
 	padding: 10px;
 	width: 100%;
 	background-color: #2d62c4;
 	border-radius: 5px;
 	color: white;
+	text-align: center;
 	font-weight: 600;
 }
 .cart_buy_btn:hover {
