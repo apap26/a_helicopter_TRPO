@@ -157,6 +157,9 @@ h2 {
 	line-height: 2;
 }
 .name_category_group:hover {
+	margin-bottom: 0;
+}
+.name_category_group:hover {
 	color: #2d62c4; 
 	font-weight: 600;
 }
