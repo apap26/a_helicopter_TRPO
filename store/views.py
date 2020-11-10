@@ -19,7 +19,26 @@ def e404(request):
 
 
 def index(request):
-    return render(request, "index.html", {})
+    new = models.product.objects.order_by('date_add')[6:]
+    popular = models.product.objects.filter(is_popular=True)[6:]
+    popular_1 = popular[0]
+    popular_2 = popular[1]
+    popular_3 = popular[2]
+    popular_4 = popular[3]
+    popular_5 = popular[4]
+    popular_6 = popular[5]
+    new_1 = new[0]
+    new_2 = new[1]
+    new_3 = new[2]
+    new_4 = new[3]
+    new_5 = new[4]
+    new_6 = new[5]
+    return render(request, "index.html", {'pop1':popular_1,'pop2':popular_2,
+                                          'pop3':popular_3, 'pop4':popular_4,
+                                          'pop5':popular_5, 'pop6':popular_6,
+                                          'new_1':new_1, 'new_2':new_2,
+                                          'new_3':new_3, 'new_4':new_4,
+                                          'new_5':new_5, 'new_6':new_6})
 
 
 def product_place(request, category, brand=None):
