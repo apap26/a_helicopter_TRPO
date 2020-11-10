@@ -546,13 +546,19 @@ h2 {
 	position: relative;
 	display: flex;
 	justify-content: space-between;
-}
-.elems_flex a {
-	flex-grow: 1;
-	flex-basis: 33.333%;
 	flex-wrap: wrap;
 }
-
+.elems_flex a {
+	position: relative;
+	display: flex;
+	flex-grow: 1;
+	flex-basis: 33.333%;
+	max-width: 33.333%;
+	flex-wrap: wrap;
+}
+.elems_flex a:hover {
+	z-index: 15;
+}
 
 .content_products_home__elems,
 .content_brands_home__elems { 
@@ -811,6 +817,7 @@ h2 {
 .product_pos__name {
 	vertical-align: text-bottom;
 
+	color: black;
 	font-weight: 500;
 	margin: 10px auto;
 	text-align: center;
