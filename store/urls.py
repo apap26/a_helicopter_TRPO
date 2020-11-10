@@ -1,9 +1,13 @@
-from django.urls import path
+from django.contrib.auth import admin
+from django.urls import path, include
 from django.views.generic import RedirectView
+from django.contrib import admin
+from django.urls import path
 
 from store import views
 
 urlpatterns = [
+    path('administartion/', admin.site.urls),
     path('favicon.ico', RedirectView.as_view(url='/static/img/favicon.ico', permanent=True)),
     path('', views.index),
     path('product/id<int:id>/', views.product),

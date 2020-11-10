@@ -6,6 +6,8 @@ from django.contrib.auth.models import User
 class brand(models.Model):
     name = models.CharField(max_length=30)
     image = models.ImageField()
+    def __str__(self):
+        return "{0}".format(self.name)
 
 
 class events_type(models.Model):
@@ -74,6 +76,8 @@ class product(models.Model):
     brand = models.ForeignKey(brand, on_delete=models.CASCADE)
     is_popular = models.BooleanField()
     date_add = models.DateField(auto_now_add=True)
+    def __str__(self):
+        return "ID: {0}, NAME: {1}".format(self.id, self.name)
 
 
 
