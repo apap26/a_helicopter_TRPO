@@ -1,0 +1,620 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% comment %}
+
+# base_extended.html 
+# Содержит базовые header и footer, является расширением базового шаблона base.html
+# Наследуется всеми страницами веб-приложения, кроме страниц для брендов
+
+{% endcomment %}
+
+{% block layout__head %}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href={% static "admin_style.css" %}>
+<title>Admin Panel</title>
+{% endblock layout__head %}
+
+{% block page__header %}
+<header class="header">
+	<div class="header__title">
+		Панель администрирования
+	</div>
+	<div class="header__profile">
+		<div class="header__about_me">
+			Катаев Алексей <span>(менеджер)</span>
+		</div>
+		<div class="header__nav">
+			<a href="">Выйти</a>	
+		</div>
+	</div>
+</header>
+{% endblock page__header %}
+{% block page__main %}
+<main class="wrapper">
+	<div class="content__wide">
+		
+		<div class="content__table">
+			<h2>Бренды</h2>
+			<div class="add_note">
+				<h3>Добавить бренд</h3>
+				<form action="" class="form__add_note">
+					<p>Название</p>
+					<input name="name" type="text" required>
+					<p>Картинка</p>
+					<input name="image" type="text" required>
+
+					<button name="add_brand" class="btn_basic btn_green" type="submit">
+						Добавить
+					</button>
+				</form>
+			</div>
+			<div class="display_note">
+				<h3>Существующие записи</h3>
+				<form action="" class="form__change_note">
+					<p>Запись #1</p>
+					<input name="id" type="hidden">
+					<input name="name" type="hidden">
+					<input name="image" type="hidden">
+					<div class="form__actions">
+						<button name="change_brand" class="btn_basic btn_yellow">
+							Изменить
+						</button>
+						<button name="remove_brand" class="btn_basic btn_red">
+							Удалить
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="content__table">
+			<h2>Категории</h2>
+			<div class="add_note">
+				<h3>Добавить категорию товара</h3>
+				<form action="" class="form__add_note">
+					<p>Название</p>
+					<input name="name" type="text" required>
+
+					<button name="add_category" class="btn_basic btn_green" type="submit">
+						Добавить
+					</button>
+				</form>
+			</div>
+			<div class="display_note">
+				<h3>Существующие записи</h3>
+				<form action="" class="form__change_note">
+					<p>Запись #1</p>
+					<input name="id" type="hidden">
+					<input name="name" type="hidden">
+					<div class="form__actions">
+						<button name="change_category" class="btn_basic btn_yellow">
+							Изменить
+						</button>
+						<button name="remove_category" class="btn_basic btn_red">
+							Удалить
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="content__table">
+			<h2>Страны</h2>
+			<div class="add_note">
+				<h3>Добавить страну</h3>
+				<form action="" class="form__add_note">
+					<p>Название</p>
+					<input name="name" type="text" required>
+
+					<button name="add_country" class="btn_basic btn_green" type="submit">
+						Добавить
+					</button>
+				</form>
+			</div>
+			<div class="display_note">
+				<h3>Существующие записи</h3>
+				<form action="" class="form__change_note">
+					<p>Запись #1</p>
+					<input name="id" type="hidden">
+					<input name="name" type="hidden">
+					<div class="form__actions">
+						<button name="change_country" class="btn_basic btn_yellow">
+							Изменить
+						</button>
+						<button name="remove_country" class="btn_basic btn_red">
+							Удалить
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="content__table">
+			<h2>Ивенты</h2>
+			<div class="add_note">
+				<h3>Добавить ивент</h3>
+				<form action="" class="form__add_note">
+					<p>Название</p>
+					<input name="name" type="text" required>
+					<p>Дата начала ивента</p>
+					<input name="start_date" type="date" required>
+					<p>Дата окончания ивента</p>
+					<input name="end_date" type="date" required>
+					<p>ID типа ивента</p>
+					<input name="id_type_id" type="number" required>
+
+					<button name="add_event" class="btn_basic btn_green" type="submit">
+						Добавить
+					</button>
+				</form>
+			</div>
+			<div class="display_note">
+				<h3>Существующие записи</h3>
+				<form action="" class="form__change_note">
+					<p>Запись #1</p>
+					<input name="id" type="hidden">
+					<input name="name" type="hidden">
+					<input name="start_date" type="hidden">
+					<input name="end_date" type="hidden">
+					<input name="id_type_id" type="hidden">
+					<div class="form__actions">
+						<button name="change_event" class="btn_basic btn_yellow">
+							Изменить
+						</button>
+						<button name="remove_event" class="btn_basic btn_red">
+							Удалить
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="content__table">
+			<h2>Типы ивентов</h2>
+			<div class="add_note">
+				<h3>Добавить тип ивента</h3>
+				<form action="" class="form__add_note">
+					<p>Название</p>
+					<input name="value" type="text" required>
+
+					<button name="add_type_event" class="btn_basic btn_green" type="submit">
+						Добавить
+					</button>
+				</form>
+			</div>
+			<div class="display_note">
+				<h3>Существующие записи</h3>
+				<form action="" class="form__change_note">
+					<p>Запись #1</p>
+					<input name="id" type="hidden">
+					<input name="value" type="hidden">
+					<div class="form__actions">
+						<button name="change_type_event" class="btn_basic btn_yellow">
+							Изменить
+						</button>
+						<button name="remove_type_event" class="btn_basic btn_red">
+							Удалить
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="content__table">
+			<h2>Способы оплаты</h2>
+			<div class="add_note">
+				<h3>Добавить способ оплаты</h3>
+				<form action="" class="form__add_note">
+					<p>Название</p>
+					<input name="value" type="text" required>
+
+					<button name="add_payments_method" class="btn_basic btn_green" type="submit">
+						Добавить
+					</button>
+				</form>
+			</div>
+			<div class="display_note">
+				<h3>Существующие записи</h3>
+				<form action="" class="form__change_note">
+					<p>Запись #1</p>
+					<input name="id" type="hidden">
+					<input name="value" type="hidden">
+					<div class="form__actions">
+						<button name="change_payments_method" class="btn_basic btn_yellow">
+							Изменить
+						</button>
+						<button name="remove_payments_method" class="btn_basic btn_red">
+							Удалить
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="content__table">
+			<h2>Персоны</h2>
+			<div class="add_note">
+				<h3>Добавить человека</h3>
+				<form action="" class="form__add_note">
+					<p>Логин</p>
+					<input name="login" type="text" required>
+					<p>Пароль</p>
+					<input name="password" type="text" required>
+					<p>Дата регистрации</p>
+					<input name="reg_data" type="date" required>
+					<p>ID роли</p>
+					<input name="id_role" type="number" required>
+					<p>Фамилия</p>
+					<input name="second_name" type="text" required>
+					<p>Имя</p>
+					<input name="first_name" type="text" required>
+					<p>Отчество</p>
+					<input name="middle_name" type="text">
+					<p>Телефон</p>
+					<input name="phone" type="text" required>
+					<p>E-Mail</p>
+					<input name="email" type="text" required>
+					<p>ID страны проживания</p>
+					<input name="id_country_id" type="number" required>
+
+					<button name="add_pesons" class="btn_basic btn_green" type="submit">
+						Добавить
+					</button>
+				</form>
+			</div>
+			<div class="display_note">
+				<h3>Существующие записи</h3>
+				<form action="" class="form__change_note">
+					<p>Запись #1</p>
+					<input name="id" type="hidden">
+					<input name="login" type="hidden">
+					<input name="password" type="hidden">
+					<input name="reg_data" type="hidden">
+					<input name="id_role" type="hidden">
+					<input name="second_name" type="hidden">
+					<input name="first_name" type="hidden">
+					<input name="middle_name" type="hidden">
+					<input name="phone" type="hidden">
+					<input name="email" type="hidden">
+					<input name="id_country_id" type="hidden">
+					<div class="form__actions">
+						<button name="change_pesons" class="btn_basic btn_yellow">
+							Изменить
+						</button>
+						<button name="remove_pesons" class="btn_basic btn_red">
+							Удалить
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="content__table">
+			<h2>Поставщики</h2>
+			<div class="add_note">
+				<h3>Добавить поставщика</h3>
+				<form action="" class="form__add_note">
+					<p>Навзание</p>
+					<input name="name" type="text" required>
+					<p>Адрес</p>
+					<input name="addres" type="text" required>
+					<p>Телефон</p>
+					<input name="phone" type="text" required>
+					<p>ID страны</p>
+					<input name="id_country_id" type="number" required>
+
+					<button name="add_postavshik" class="btn_basic btn_green" type="submit">
+						Добавить
+					</button>
+				</form>
+			</div>
+			<div class="display_note">
+				<h3>Существующие записи</h3>
+				<form action="" class="form__change_note">
+					<p>Запись #1</p>
+					<input name="id" type="hidden">
+					<input name="name" type="hidden">
+					<input name="addres" type="hidden">
+					<input name="phone" type="hidden">
+					<input name="id_country_id" type="hidden">
+					<div class="form__actions">
+						<button name="change_postavshik" class="btn_basic btn_yellow">
+							Изменить
+						</button>
+						<button name="remove_postavshik" class="btn_basic btn_red">
+							Удалить
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="content__table">
+			<h2>Товары</h2>
+			<div class="add_note">
+				<h3>Добавить товары</h3>
+				<form action="" class="form__add_note">
+					<p>Название</p>
+					<input name="name" type="text" required>
+					<p>Стоимость</p>
+					<input name="price" type="number" required>
+					<p>Вес (кг)</p>
+					<input name="weight" type="number" required>
+					<p>Изображение</p>
+					<input name="image" type="text" required>
+					<p>Описание</p>
+					<input name="about" type="text" required>
+					<p>Расширенное описание, HTML-разметка</p>
+					<div>
+						<textarea name="html_about" type="text" required></textarea>
+					</div>
+					<p>Популярен? (1 - да, 0 - нет)</p>
+					<input name="is_popular" type="number" required>
+					<p>Дата добавления</p>
+					<input name="date_add" type="date" required>
+					<p>ID бренда</p>
+					<input name="brand_id" type="number" required>
+					<p>ID категории</p>
+					<input name="cat_id_id" type="number" required>
+					<p>ID страны-производителя</p>
+					<input name="id_country_id" type="number" required>
+					<p>ID поставщика</p>
+					<input name="id_postavshik_id" type="number" required>
+
+					<button name="add_product" class="btn_basic btn_green" type="submit">
+						Добавить
+					</button>
+				</form>
+			</div>
+			<div class="display_note">
+				<h3>Существующие записи</h3>
+				<form action="" class="form__change_note">
+					<p>Запись #1</p>
+					<input name="id" type="hidden">
+					<input name="name" type="hidden">
+					<input name="price" type="hidden">
+					<input name="weight" type="hidden">
+					<input name="image" type="hidden">
+					<input name="about" type="hidden">
+					<input name="html_about" type="hidden">
+					<input name="is_popular" type="hidden">
+					<input name="date_add" type="hidden">
+					<input name="brand_id" type="hidden">
+					<input name="cat_id_id" type="hidden">
+					<input name="id_country_id" type="hidden">
+					<input name="id_postavshik_id" type="hidden">
+					<div class="form__actions">
+						<button name="change_product" class="btn_basic btn_yellow">
+							Изменить
+						</button>
+						<button name="remove_product" class="btn_basic btn_red">
+							Удалить
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="content__table">
+			<h2>Роли</h2>
+			<div class="add_note">
+				<h3>Добавить роль пользователя</h3>
+				<form action="" class="form__add_note">
+					<p>Название</p>
+					<input name="name" type="text" required>
+					<p>Значение</p>
+					<input name="vaule" type="number" required>
+
+					<button name="add_roles" class="btn_basic btn_green" type="submit">
+						Добавить
+					</button>
+				</form>
+			</div>
+			<div class="display_note">
+				<h3>Существующие записи</h3>
+				<form action="" class="form__change_note">
+					<p>Запись #1</p>
+					<input name="id" type="hidden">
+					<input name="name" type="hidden">
+					<input name="vaule" type="hidden">
+					<div class="form__actions">
+						<button name="change_roles" class="btn_basic btn_yellow">
+							Изменить
+						</button>
+						<button name="remove_roles" class="btn_basic btn_red">
+							Удалить
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>			
+		<div class="content__table">
+			<h2>Продажи</h2>
+			<div class="add_note">
+				<h3>Добавить продажу</h3>
+				<form action="" class="form__add_note">
+					<p>Дата продажи</p>
+					<input name="date" type="date" required>
+					<p>ID сотрудника</p>
+					<input name="id_staff_id" type="number" required>
+					<p>ID способа оплаты</p>
+					<input name="payments_method_id" type="number" required>
+					<p>ID клиента</p>
+					<input name="user_id" type="number" required>
+
+					<button name="add_sale" class="btn_basic btn_green" type="submit">
+						Добавить
+					</button>
+				</form>
+			</div>
+			<div class="display_note">
+				<h3>Существующие записи</h3>
+				<form action="" class="form__change_note">
+					<p>Запись #1</p>
+					<input name="id" type="hidden">
+					<input name="date" type="hidden">
+					<input name="id_staff_id" type="hidden">
+					<input name="payments_method_id" type="hidden">
+					<input name="user_id" type="hidden">
+					<div class="form__actions">
+						<button name="change_sale" class="btn_basic btn_yellow">
+							Изменить
+						</button>
+						<button name="remove_sale" class="btn_basic btn_red">
+							Удалить
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="content__table">
+			<h2>Позиция товарного чека</h2>
+			<div class="add_note">
+				<h3>Добавить позицию товарного чека</h3>
+				<form action="" class="form__add_note">
+					<p>Количество</p>
+					<input name="count" type="number" required>
+					<p>Стоимость</p>
+					<input name="price" type="number" required>
+					<p>ID товара</p>
+					<input name="id_product_id" type="number" required>
+					<p>ID продажи</p>
+					<input name="id_sale_id" type="number" required>
+
+					<button name="add_sale_pos" class="btn_basic btn_green" type="submit">
+						Добавить
+					</button>
+				</form>
+			</div>
+			<div class="display_note">
+				<h3>Существующие записи</h3>
+				<form action="" class="form__change_note">
+					<p>Запись #1</p>
+					<input name="id" type="hidden">
+					<input name="count" type="hidden">
+					<input name="price" type="hidden">
+					<input name="id_product_id" type="hidden">
+					<input name="id_sale_id" type="hidden">
+					<div class="form__actions">
+						<button name="change_sale_pos" class="btn_basic btn_yellow">
+							Изменить
+						</button>
+						<button name="remove_sale_pos" class="btn_basic btn_red">
+							Удалить
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="content__table">
+			<h2>Смены сотрудников</h2>
+			<div class="add_note">
+				<h3>Добавить тип смены</h3>
+				<form action="" class="form__add_note">
+					<p>Название</p>
+					<input name="name" type="text" required>
+					<p>Время начала смены</p>
+					<input name="start_time" type="time" required>
+					<p>Время окончания смены</p>
+					<input name="end_time" type="time" required>
+
+					<button name="add_shift_type" class="btn_basic btn_green" type="submit">
+						Добавить
+					</button>
+				</form>
+			</div>
+			<div class="display_note">
+				<h3>Существующие записи</h3>
+				<form action="" class="form__change_note">
+					<p>Запись #1</p>
+					<input name="id" type="hidden">
+					<input name="name" type="hidden">
+					<input name="start_time" type="hidden">
+					<input name="end_time" type="hidden">
+					<div class="form__actions">
+						<button name="change_shift_type" class="btn_basic btn_yellow">
+							Изменить
+						</button>
+						<button name="remove_shift_type" class="btn_basic btn_red">
+							Удалить
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="content__table">
+			<h2>Расписание сотрудников</h2>
+			<div class="add_note">
+				<h3>Добавить запись</h3>
+				<form action="" class="form__add_note">
+					<p>Дата</p>
+					<input name="working_day_date" type="date" required>
+					<p>ID сотрудника</p>
+					<input name="id_people_id" type="number" required>
+					<p>ID типа смены</p>
+					<input name="id_shift_type_id" type="number" required>
+
+					<button name="add_staff_timetable" class="btn_basic btn_green" type="submit">
+						Добавить
+					</button>
+				</form>
+			</div>
+			<div class="display_note">
+				<h3>Существующие записи</h3>
+				<form action="" class="form__change_note">
+					<p>Запись #1</p>
+					<input name="id" type="hidden">
+					<input name="working_day_date" type="hidden">
+					<input name="id_people_id" type="hidden">
+					<input name="id_shift_type_id" type="hidden">
+					<div class="form__actions">
+						<button name="change_staff_timetable" class="btn_basic btn_yellow">
+							Изменить
+						</button>
+						<button name="remove_staff_timetable" class="btn_basic btn_red">
+							Удалить
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="content__table">
+			<h2>Складские помещения</h2>
+			<div class="add_note">
+				<h3>Добавить склад</h3>
+				<form action="" class="form__add_note">
+					<p>Дата доставки на склад</p>
+					<input name="date_bg" type="date" required>
+					<p>ID товара</p>
+					<input name="id_product_id" type="number" required>
+					<p>Количество на складе</p>
+					<input name="id_count_id" type="number" required>
+
+					<button name="add_storage" class="btn_basic btn_green" type="submit">
+						Добавить
+					</button>
+				</form>
+			</div>
+			<div class="display_note">
+				<h3>Существующие записи</h3>
+				<form action="" class="form__change_note">
+					<p>Запись #1</p>
+					<input name="id" type="hidden">
+					<input name="date_bg" type="hidden">
+					<input name="id_product_id" type="hidden">
+					<input name="id_count_id" type="hidden">
+					<div class="form__actions">
+						<button name="change_storage" class="btn_basic btn_yellow">
+							Изменить
+						</button>
+						<button name="remove_storage" class="btn_basic btn_red">
+							Удалить
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</main>
+{% endblock page__main %}
+{% block page__footer %}
+<footer class="footer">
+	<div class="footer__title">
+		Attach Helicopter, 2020
+	</div>
+</footer>
+{% endblock page__footer %}
