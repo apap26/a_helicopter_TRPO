@@ -13,6 +13,7 @@ from django.core.exceptions import ObjectDoesNotExist
 Динамическая вёрстка
 """
 
+
 def e404(request):
     return HttpResponse("404")
 
@@ -29,7 +30,6 @@ def product_place(request, category, brand=None):
         return render(request, "select_category.html", {'category':category, 'products':products, 'count':count_product})
     except ObjectDoesNotExist:
         return e404(request)
-
 
 
 def product(request, id):
@@ -115,8 +115,6 @@ def products_to_json(start, end, category, brand=None):
                 brand,
                 start,
                 end))
-    # Я имал djang овскую подстановку с защитой от sql инъекций, фигли то оно не работает, шатал я его дом изба
-    # пускай ОбстрОктные хаЦкеры ломают этот сайт, я имал этот дом изба!!!
     js = serialaze_products(product)
     return js
 
@@ -136,20 +134,18 @@ def serialaze_products(product):
 
 
 def about(request):  # О магазине
-    ret = render(request, 'about.html', {})
-    return ret
+    return render(request, 'about.html', {})
 
 
 def payment(request):  # Об плате
-    ret = render(request, 'payment.html', {})
-    return ret
+    return render(request, 'payment.html', {})
 
 
 def delivery(request):  # Доставка
-    ret = render(request, 'delivery.html', {})
-    return ret
+    return render(request, 'delivery.html', {})
+
 
 
 def warranty(request):  # Гарантия
-    ret = render(request, 'warranty.html', {})
-    return ret
+    return render(request, 'warranty.html', {})
+
