@@ -528,8 +528,41 @@ h2 {
 	width: 150px;
 	padding: 20px;
 }
-
-
+/* Регистрация, авторизация - формы */
+.auth_form {
+	position: relative;
+	width: 100%;
+	padding: 0 0 15px 0;
+}
+.auth_form:first-child h2 {
+	margin-top: 0;
+}
+.auth_form form {
+	display: block;
+	width: 100%;
+	max-width: 500px;
+	margin: 0 auto;
+}
+.auth_form label {
+	background-color: white;
+}
+.auth_form form a {
+	color: black;
+}
+.auth_form form button {
+	margin-bottom: 20px;
+}
+.auth_form form a:hover {
+	font-weight: 600;
+}
+.auth_form form > input {
+	display: block;
+	height: 40px;
+	width: 100%;
+	border-bottom: 2px solid #b4b1b1;
+	background-color: white;
+	margin-bottom: 20px;
+}
 
 
 /* Блок-обёртка для кнопок выбора категории */
