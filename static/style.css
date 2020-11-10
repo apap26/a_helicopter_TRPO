@@ -543,8 +543,14 @@ h2 {
 	width: calc(100% - 300px);
 }
 .elems_flex {
+	position: relative;
 	display: flex;
-	flex-basis: 100%;
+	justify-content: space-between;
+}
+.elems_flex a {
+	flex-grow: 1;
+	flex-basis: 33.333%;
+	flex-wrap: wrap;
 }
 
 
