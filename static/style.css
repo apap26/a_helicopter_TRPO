@@ -775,6 +775,8 @@ h2 {
 /* Кнопка выбора популярного товара или бренда */
 .product_pos_btn,
 .brand_pos_btn {
+	display: inline-block;
+	position: relative;
 	flex-basis: 130px;
 	flex-grow: 1;
 	overflow: hidden;
@@ -796,21 +798,30 @@ h2 {
 }
 .product_pos_btn {height: 200px;}
 .brand_pos_btn {height: 130px;}
+
 .product_pos__img,
 .brand_pos__img {
+	display: block;
+	position: relative;
 	height: 100px;
+	width: 100px;
 	margin: 0 auto;
+	margin-bottom: 20px;
 }
 .product_pos__name {
 	vertical-align: text-bottom;
 
 	font-weight: 500;
 	margin: 10px auto;
+	text-align: center;
+	width: 100%;
 }
 .product_pos__pricetag {
 	color: #d43cc8;
 	font-size: 16px;
 	font-weight: 700;
+	text-align: center;
+	width: 100%;
 }
 .product_pos__pricetag span {font-size: 14px;}
 .product_pos_btn:hover {
