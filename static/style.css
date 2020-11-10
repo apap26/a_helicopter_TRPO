@@ -42,7 +42,6 @@ h1 {
 	font-weight: 300;
 	text-align: center;
 	line-height: 2;
-	user-select: none;
 }
 h2 {
 	width: 100%;
@@ -51,7 +50,6 @@ h2 {
 	border-radius: 5px;
 	box-shadow: 0px 0px 5px #dfdfdf;		
 	font-size: 16px;
-	user-select: none;
 }
 .tabulation {margin-right: 40px;}
 .left_side {float: left; margin-right: 20px;}
@@ -545,8 +543,14 @@ h2 {
 	width: calc(100% - 300px);
 }
 .elems_flex {
+	position: relative;
 	display: flex;
-	flex-basis: 100%;
+	justify-content: space-between;
+}
+.elems_flex a {
+	flex-grow: 1;
+	flex-basis: 33.333%;
+	flex-wrap: wrap;
 }
 
 

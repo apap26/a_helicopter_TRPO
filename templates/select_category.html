@@ -13,31 +13,28 @@
 	<div id="__DYNAMIC_CONTENT__" class="content">	
 		<h1>{{ category.name }}</h1>
 		<div class="content_products_home">
-			<div id="__DYNAMIC_CHILD_CONTENT__">
+			<div class="elems_flex" id="__DYNAMIC_CHILD_CONTENT__">
                 {% for product in products %}
-				<div class="elems_flex">
-                <a href="/product/id{{ product.id }}">
+				<a href="/product/id{{ product.id }}">
 					<button class="product_pos_btn">
 						<img src="{{ product.image }}" alt="IMG" class="product_pos__img">
 						<p class="product_pos__name">{{product.name}}</p>
 						<p class="product_pos__pricetag">{{product.price}} <span>₽</span></p>
 					</button>
+				</a>
+                {% endfor %}
+                {%  comment %}
+				<div class="elems_flex">
+                <a href="/product/id{{ product.id }}">
+					<button class="product_pos_btn">
+						<img src={% static "icons/question.svg" %} alt="Image" class="product_pos__img">
+						<p class="product_pos__name">Название</p>
+						<p class="product_pos__pricetag">- <span>₽</span></p>
+					</button>
                 </a>
 				</div>
                 {% endfor %}
                 {%  comment %}
-				<div class="elems_flex">
-					<button class="product_pos_btn">
-						<img src={% static "icons/question.svg" %}alt="Image" class="product_pos__img">
-						<p class="product_pos__name">Название</p>
-						<p class="product_pos__pricetag">- <span>₽</span></p>
-					</button>
-					<button class="product_pos_btn">
-						<img src={% static "icons/question.svg" %}alt="Image" class="product_pos__img">
-						<p class="product_pos__name">Название</p>
-						<p class="product_pos__pricetag">- <span>₽</span></p>
-					</button>
-				</div>
 				<div class="elems_flex">
 					<button class="product_pos_btn">
 						<img src={% static "icons/question.svg" %}alt="Image" class="product_pos__img">
