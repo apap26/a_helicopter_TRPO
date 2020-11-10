@@ -36,6 +36,8 @@ img {vertical-align: top;}
 
 h2, h3, h4, h5, h6 {font-size:inherit; font-weight: 400;}
 
+
+
 h1 {
 	margin: 20px auto;
 	font-size: 30px;
@@ -54,7 +56,11 @@ h2 {
 .tabulation {margin-right: 40px;}
 .left_side {float: left; margin-right: 20px;}
 .right_side {float: right; margin-left: 20px;}
-
+.about_html {
+	display: block;
+	position: relative;
+	width: 100%;
+}
 
 .header {	
 	position: fixed;	
