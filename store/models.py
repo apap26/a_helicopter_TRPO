@@ -67,7 +67,7 @@ class pesons(models.Model):
     email = models.CharField(max_length=150, null=True)
     user_t = models.OneToOneField(User, on_delete=models.CASCADE, related_name="user_t")
     def __str__(self):
-        return "{0}, {1]".format(self.id, self.first_name)
+        return "{0}, {1}".format(self.id, self.first_name)
 
 
 class product(models.Model):
