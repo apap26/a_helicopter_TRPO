@@ -21,11 +21,15 @@ class events(models.Model):
     id_type = models.ForeignKey(events_type, on_delete=models.CASCADE)
     start_date = models.DateTimeField()
     end_date = models.DateTimeField()
+    def __str__(self):
+        return self.name
 
 
 class country(models.Model):
     id= models.AutoField(primary_key=True, db_index=True)
     name = models.CharField(max_length=30)
+    def __str__(self):
+        return "{0}".format(self.name)
 
 
 class postavshik(models.Model):
@@ -34,11 +38,15 @@ class postavshik(models.Model):
     addres = models.CharField(max_length=30)
     phone = models.CharField(max_length=30)
     id_country = models.ForeignKey(country, on_delete=models.CASCADE)
+    def __str__(self):
+        return self.name
 
 
 class category(models.Model):
     id = models.AutoField(primary_key=True, db_index=True)
     name = models.CharField(max_length=30)
+    def __str__(self):
+        return self.name
 
 
 class roles(models.Model):
@@ -49,9 +57,7 @@ class roles(models.Model):
 
 class pesons(models.Model):
     id = models.AutoField(primary_key=True, db_index=True)
-    Login = models.CharField(max_length=30)
-    password = models.CharField(max_length=255)
-    reg_data = models.DateField()
+    reg_data = models.DateField(auto_now_add=True)
     id_role = models.CharField(max_length=30)
     id_country = models.ForeignKey(country, on_delete=models.CASCADE)
     second_name = models.CharField(max_length=30, null=True)
@@ -60,6 +66,8 @@ class pesons(models.Model):
     phone = models.CharField(max_length=11, null=True)
     email = models.CharField(max_length=150, null=True)
     user_t = models.OneToOneField(User, on_delete=models.CASCADE, related_name="user_t")
+    def __str__(self):
+        return "{0}, {1]".format(self.id, self.first_name)
 
 
 class product(models.Model):
@@ -98,6 +106,8 @@ class shift_type(models.Model):
 class payments_method(models.Model):
     id = models.AutoField(primary_key=True, db_index=True)
     value = models.CharField(max_length=40)
+    def __str__(self):
+        return self.value
 
 
 class staff_timetable(models.Model):
