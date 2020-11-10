@@ -41,6 +41,27 @@ def index(request):
                                           'new_5':new_5, 'new_6':new_6})
 
 
+
+def buy(request):
+    try:
+        id = int(request.GET.get('id'))
+        product = models.product.objects.get(id=id)
+        # if not request.user.is_anonymous:
+        user = request.user
+        return render(request, "TODO", {'product':product, 'user':user})
+    except Exception:
+        return e404(request)
+
+def accept_buy(request):
+    try:
+        phone = request.POST.get('phone')
+        adres = request.POST.get('adres')
+        id = int(request.POST.get('id'))
+        models.sale(user=models.pesons.objects.get())
+    except Exception:
+        return e404(request)
+
+
 def product_place(request, category, brand=None):
     try:
         category = models.category.objects.get(id=category)

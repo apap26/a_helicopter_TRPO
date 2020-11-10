@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 # suna comment
 # suna comment
 
@@ -56,6 +57,7 @@ class pesons(models.Model):
     middle_name = models.CharField(max_length=30, null=True)
     phone = models.CharField(max_length=11, null=True)
     email = models.CharField(max_length=150, null=True)
+    user_t = models.OneToOneField(User, on_delete=models.CASCADE, related_name="user_t")
 
 
 class product(models.Model):
