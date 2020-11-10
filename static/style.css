@@ -146,6 +146,9 @@ h2 {
 	max-width: 980px;
 	margin: 0 auto;
 }
+.content_modal_categories a {
+	color: black;
+}
 .name_category_group {
 	display: block;
 	margin: 10px auto;
