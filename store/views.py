@@ -1,7 +1,8 @@
 import datetime
 
+from django.contrib.auth.models import User
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.core import serializers
 import json
 import store.models
@@ -41,6 +42,32 @@ def index(request):
                                           'new_5':new_5, 'new_6':new_6})
 
 
+def register(request):
+    if (request.method == 'POST'):
+        try:
+            username = request.POST.get('username')
+            email = request.POST.get('email')
+            password = request.POST.get('password')
+            country_id = int(request.POST.get('countryid'))
+            second_name = request.POST.get('secondname')
+            first_name = request.POST.get('firstname')
+            middle_name = request.POST.get('middlename')
+            phone = request.POST.get('phone')
+
+            new_user = User(username=username, email=email, password=password)
+            new_user.save()
+            peson = models.pesons(id_country_id=country_id, second_name=second_name, first_name=first_name,
+                                  middle_name=middle_name, phone=phone, user_t=new_user)
+            peson.save()
+            request.user = new_user
+            print("Succes!")
+            return redirect('/')
+        except Exception:
+            return HttpResponse("Регистрация не удалась, возможно это мия пользователя уже занято")
+    else:
+        return render(request, "reg.html", {})
+
+
 
 def buy(request):
     try:
@@ -57,7 +84,7 @@ def accept_buy(request):
         phone = request.POST.get('phone')
         adres = request.POST.get('adres')
         id = int(request.POST.get('id'))
-        models.sale(user=models.pesons.objects.get())
+        models.sale(user=models.pesons.objects.get(user_t=request.user), payments_method_id=3, id_staff_id=3)
     except Exception:
         return e404(request)
 
