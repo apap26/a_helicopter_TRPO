@@ -58,7 +58,11 @@
         <a href="/payment" class="nav_info_btn">Оплата</a>
         <a href="/delivery" class="nav_info_btn">Доставка</a>
         <a href="/warranty" class="nav_info_btn">Гарантия</a>
-        <a href="/accounts/login/" class="nav_info_btn">Авторизация</a>
+		{% if user.is_authenticated %}
+			<a href="/accounts/profile/" class="nav_info_btn">Профиль</a>
+		{% else %}
+			<a href="/accounts/login/" class="nav_info_btn">Вход</a>
+		{% endif %} 
     </div>
     <div class="nav_menu">
         <p class="header_main" onclick="goTo('/')">A. Helicopter</p>
