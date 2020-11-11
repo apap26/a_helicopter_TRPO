@@ -61,9 +61,9 @@ def register(request):
             peson.save()
             request.user = new_user
             print("Succes!")
-            return redirect('/')
+            return render(request, "reg.html", {'error':'Регистрация успешно выполнена'})
         except Exception:
-            return HttpResponse("Регистрация не удалась, возможно это мия пользователя уже занято")
+            return render(request, "reg.html", {'error':'Ошибка, возможно это имя пользователя уже занято'})
     else:
         return render(request, "reg.html", {})
 
