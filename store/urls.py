@@ -11,6 +11,8 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('register/', views.register),
     path('dev/', views.manager_admin),
+    path('buy/', views.buy),
+    path('buy/end', views.accept_buy),
     path('favicon.ico', RedirectView.as_view(url='/static/img/favicon.ico', permanent=True)),
     path('', views.index),
     path('product/id<int:id>/', views.product),

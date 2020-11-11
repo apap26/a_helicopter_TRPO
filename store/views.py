@@ -83,17 +83,24 @@ def buy(request):
         product = models.product.objects.get(id=id)
         # if not request.user.is_anonymous:
         user = request.user
-        return render(request, "TODO", {'product':product, 'user':user})
+        return render(request, "order.html", {'product':product, 'user':user})
     except Exception:
         return e404(request)
 
 def accept_buy(request):
     try:
+        if request.user.is_anonymous:
+            return e404(request)
         phone = request.POST.get('phone')
-        adres = request.POST.get('adres')
+        adres = request.POST.get('address')
         id = int(request.POST.get('id'))
-        models.sale(user=models.pesons.objects.get(user_t=request.user), payments_method_id=3, id_staff_id=3)
-    except Exception:
+        product = models.product.objects.get(id=id)
+        sale = models.sale(user=models.pesons.objects.get(user_t=request.user), payments_method_id=3, id_staff_id=3)
+        sale.save()
+        check_pos = models.sale_pos(id_sale=sale, count=1, id_product_id=product.id, price=product.price)
+        check_pos.save()
+        return render(request, "order_is_processed.html")
+    except ZeroDivisionError:
         return e404(request)
 
 
