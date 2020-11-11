@@ -57,14 +57,13 @@ def register(request):
             username = request.POST.get('username')
             email = request.POST.get('email')
             password = request.POST.get('password')
-            country_id = int(request.POST.get('countryid'))
+            country_id = 3 #int(request.POST.get('countryid'))
             second_name = request.POST.get('secondname')
             first_name = request.POST.get('firstname')
             middle_name = request.POST.get('middlename')
             phone = request.POST.get('phone')
 
-            new_user = User(username=username, email=email, password=password)
-            new_user.save()
+            new_user = User.objects.create_user(username, email, password)
             peson = models.pesons(id_country_id=country_id, second_name=second_name, first_name=first_name,
                                   middle_name=middle_name, phone=phone, user_t=new_user)
             peson.save()
