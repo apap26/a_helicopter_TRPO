@@ -109,8 +109,7 @@ h2 {
 	font-size: 30px;
 	font-weight: 300;
 	text-align: center;
-	line-height: 50px;
-	user-select: none;
+	line-height: 50px;	
 	cursor: pointer;
 }
 
@@ -212,7 +211,6 @@ h2 {
 	position: relative;
 	display: inline-block;
 	cursor: pointer;
-	user-select: none;
 	height: 25px;
 	margin-left: -5px;
 }
@@ -227,7 +225,6 @@ h2 {
 	display: inline-block;
 	cursor: pointer;
 	padding-left: 30px;
-	user-select: none;
 	line-height: 25px;
 }
 .select_radio label::before {
@@ -261,7 +258,6 @@ h2 {
 	display: inline-block;
 	cursor: pointer;
 	padding-left: 30px;
-	user-select: none;
 	line-height: 25px;
 }
 .content_sidebar_filter label::before {
@@ -295,7 +291,6 @@ h2 {
 	margin-bottom: 10px;
 	font-size: 16px;
 	text-overflow: ellipsis;
-	user-select: none;
 }
 .sidebar_myname {
 	overflow: hidden;
@@ -303,7 +298,6 @@ h2 {
 	font-size: 16px;
 	white-space: nowrap;
 	text-overflow: ellipsis;
-	user-select: none;
 }
 .sidebar_photo {
 	position: relative;
@@ -351,7 +345,6 @@ h2 {
 	border-left: 5px solid #ffffff;
 	color: black;
 	line-height: 40px;
-	user-select: none;
 }
 .sidebar_links a:hover {
 	transition: 0.25s;
@@ -433,7 +426,6 @@ h2 {
 	width: 100%;
 	margin: 20px auto 20px 0;
 	font-size: 16px;
-	user-select: none;
 }
 .cart_total_pricetag span {
 	font-size: 18px;
@@ -447,7 +439,6 @@ h2 {
 	margin: 0 auto;
 	border-radius: 10px;	
 }
-.bank_card * {user-select: none;}
 .bank_card a {
 	position: absolute;
 	display: block;
@@ -505,7 +496,6 @@ h2 {
 }
 .profile_about__elems p:first-child {
 	color: #808080;
-	user-select: none;
 }
 .profile_about:first-child h2:first-child {margin-top: 0;}
 
@@ -632,20 +622,17 @@ h2 {
 .header_col {
 	margin-bottom: 20px;
 	font-weight: 500;
-	user-select: none;
 }
 
 .footer {
 	background-color: black;
 	padding: 50px 50px 0px 50px;
 }
-.footer p {user-select: none;}
 .footer p, .footer span, .footer a {
 	position: relative;
 	color: #afafaf;
 	font-size: 12px;
 	line-height: 2;
-	user-select: none;
 }
 .footer span, .footer a {display: block;}
 .footer a img {
