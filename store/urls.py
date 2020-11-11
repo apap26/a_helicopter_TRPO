@@ -10,6 +10,7 @@ urlpatterns = [
     path('administartion/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
     path('register/', views.register),
+    path('dev/', views.manager_admin),
     path('favicon.ico', RedirectView.as_view(url='/static/img/favicon.ico', permanent=True)),
     path('', views.index),
     path('product/id<int:id>/', views.product),

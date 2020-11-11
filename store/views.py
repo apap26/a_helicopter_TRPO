@@ -22,6 +22,8 @@ def e404(request):
 def index(request):
     new = models.product.objects.order_by('date_add')[6:]
     popular = models.product.objects.filter(is_popular=True)[6:]
+    if(new.count() < 6 | popular.count() < 6):
+        return render(request, "index.html", {})
     popular_1 = popular[0]
     popular_2 = popular[1]
     popular_3 = popular[2]
@@ -40,6 +42,12 @@ def index(request):
                                           'new_1':new_1, 'new_2':new_2,
                                           'new_3':new_3, 'new_4':new_4,
                                           'new_5':new_5, 'new_6':new_6})
+
+
+def manager_admin(request):
+
+
+    return render(request, "base_extended_oth.html", {})
 
 
 def register(request):
