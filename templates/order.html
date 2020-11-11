@@ -1,0 +1,30 @@
+{% extends "base_extended.html" %}
+
+{% load static %}
+
+
+
+{% block page__main %}
+
+<main id="view_page" class="container container_display">			
+	<div id="__DYNAMIC_CHILD_CONTENT__" class="content">
+		<h1>Орофмление заказа</h1>
+		<div class="content">
+			<div class="about_payment_method">
+				<div class="auth_form">
+					<form action="">
+						<h2>Название товара</h2>
+						<p>Адрес доставки</p>
+						<input type="text" name="address" id="" required>
+						<p>Номер телефона</p>
+						<input type="tel" name="phone" id="" required>
+						<input type="hidden" name="id" id="" required> <!-- ТУТА ID БУДИТ ЁПТА -->
+						<button class="cart_buy_btn" name="btn_register" type="submit">Купить (0.00 ₽)</button>
+					</form>
+				</div>
+			</div>
+		</div>	
+	</div>
+</main>
+
+{% endblock page__main %}
