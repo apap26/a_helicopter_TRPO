@@ -1,5 +1,6 @@
 import datetime
 
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
@@ -122,8 +123,13 @@ def product(request, id):
         return HttpResponse("404")
 
 
-def brand(request):
-    return -8
+@login_required
+def profile(request):
+    if request.user.is_anonymous:
+        return e404(request)
+    user = request.user
+    peson = models.pesons.objects.get(user_t=user)
+    return render(request, "registration/profile.html", {'user':user, 'person':peson})
 
 
 def brand_page(request, brand):

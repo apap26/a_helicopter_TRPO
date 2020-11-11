@@ -9,6 +9,7 @@ from store import views
 urlpatterns = [
     path('administartion/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/profile/', views.profile),
     path('register/', views.register),
     path('dev/', views.manager_admin),
     path('buy/', views.buy),
@@ -18,7 +19,7 @@ urlpatterns = [
     path('product/id<int:id>/', views.product),
     path('product/<int:category>/<int:brand>/', views.product_place),
     path('product/<int:category>/', views.product_place),
-    path('brand/', views.brand),
+
     # path('brand/<str:brand>/', views.brand_page),
     path('api/', views.api),
     path('api/get_product/<int:category>/',views.api_products),

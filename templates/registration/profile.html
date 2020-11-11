@@ -30,10 +30,10 @@
 			<div class="content_sidebar_nav">					
 				<div class="content_sidebar_nav__elems">
 					<a class="sidebar_photo">
-						<img src="res/photo/CaXEXWsUMAAwnTE.jpg">
+						<img src="https://avatars2.githubusercontent.com/u/49910690?s=460&u=6c152079b428e67e712dd923a094a91c18c20e24&v=4">
 					</a>
-					<p class="sidebar_myname">Jopa Jopa Jopa</p>	
-					<p class="sidebar_myphone">Тел. Govno</p>				
+					<p class="sidebar_myname">{{ person.first_name}} {{ person.last_name }} {{ person.middle_name }} </p>
+					<p class="sidebar_myphone">{{ person.phone }}</p>
 				</div>		
 				<div class="content_sidebar_nav__elems">
 					<div class="sidebar_links">
@@ -48,19 +48,19 @@
 						<h2>Персональные данные</h2>
 						<div class="profile_about__elems">
 							<p>ФИО</p>
-							<p>Jopa Jopa Jopa</p>
+							<p>{{ person.first_name}} {{ person.last_name }} {{ person.middle_name }} </p>
 						</div>
 						<div class="profile_about__elems">
 							<p>Телефон</p>
-							<p>Govno</p>
+							<p>{{ person.phone }}</p>
 						</div>
 						<div class="profile_about__elems">
 							<p>Почта</p>
-							<p>kal@yahoo.com</p>
+							<p>{{person.email}}</p>
 						</div>
 						<div class="profile_about__elems">
 							<p>ID учётной записи</p>
-							<p>Parasha</p>
+							<p>{{user.id}}::{{ person.id }}</p>
 						</div>
 					</div>
 				</div>
