@@ -124,13 +124,13 @@ class bonus_card(models.Model):
     id_people = models.ForeignKey(pesons, on_delete=models.CASCADE)
     number = models.CharField(max_length=30)
     count_bonus = models.IntegerField()
-    date_bg = models.DateTimeField()
+    date_bg = models.DateTimeField(auto_now_add=True)
 
 
 class sale(models.Model):
     id = models.AutoField(primary_key=True, db_index=True)
     user = models.ForeignKey(pesons, related_name='user', on_delete=models.CASCADE, null=True)
-    date = models.DateTimeField()
+    date = models.DateTimeField(auto_now_add=True)
     payments_method = models.ForeignKey(payments_method, on_delete=models.CASCADE)
     id_staff = models.ForeignKey(pesons, related_name='id_staff', on_delete=models.CASCADE)
 

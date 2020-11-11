@@ -12,15 +12,20 @@
 		<div class="content">
 			<div class="about_payment_method">
 				<div class="auth_form">
-					<form action="">
-						<h2>Название товара</h2>
+                    {% if  user.is_anonymous %}
+                        Для покупки необходимо зарегистрироваться
+                    {% else %}
+					<form action="/buy/end" METHOD="post">
+                        {% csrf_token %}
+						<h2>Вы {{ user.username }}, покупаете: {{product.name}}</h2>
 						<p>Адрес доставки</p>
 						<input type="text" name="address" id="" required>
 						<p>Номер телефона</p>
 						<input type="tel" name="phone" id="" required>
-						<input type="hidden" name="id" id="" required> <!-- ТУТА ID БУДИТ ЁПТА -->
-						<button class="cart_buy_btn" name="btn_register" type="submit">Купить (0.00 ₽)</button>
+						<input type="hidden" name="id" id="" required value="{{ product.id }}"> <!-- ТУТА ID БУДИТ ЁПТА -->
+						<button class="cart_buy_btn" name="btn_register" type="submit">Купить ({{ product.price }} ₽)</button>
 					</form>
+                    {% endif %}
 				</div>
 			</div>
 		</div>	
