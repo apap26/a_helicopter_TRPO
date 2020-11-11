@@ -11,6 +11,20 @@
 {% block page__main %}
 <main id="view_page" class="container container_display">			
 	<div id="__DYNAMIC_CONTENT__" class="content">	
+		{% if form.errors %}
+			<p>Your username and password didn't match. Please try again.</p>
+		{% endif %}
+
+		{% if next %}
+			{% if user.is_authenticated %}
+				<p>Your account doesn't have access to this page. To proceed,
+				please login with an account that has access.</p>
+			{% else %}
+				<p>Please login to see this page.</p>
+			{% endif %}
+		{% endif %}
+		
+		{% csrf_token %}
 		<h1>Профиль - мои данные</h1>
 		<div class="content_profile">
 			<div class="content_sidebar_nav">					
